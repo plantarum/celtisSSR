@@ -1,0 +1,791 @@
+---
+title: "The genetic diversity of triploid *Celtis pumila* and its diploid relatives *C. occidentalis* and *C. laevigata*"
+output:
+  bookdown::pdf_document2:
+    toc: false
+    number_sections: false
+bibliography: plantarum.json
+csl: american-journal-of-botany.csl
+updated: 2021-02-25
+---
+
+# Abstract
+# Keywords
+# Introduction
+*Celtis pumila* Pursh (sensu @Whittemore_2013; *C. tenuifolia* Nutt. in
+@Sherman-BroylesEtAl_1997 and earlier authors; Cannabaceae; Dwarf
+Hackberry) is a shrub or small tree, native to eastern North America. Its
+range consists primarily of the southeastern United States, from Missouri,
+Kentucky, and Pennsylvania south to Florida, and from Kansas and Texas east
+to the Atlantic Coast [@Sherman-BroylesEtAl_1997]. There are also smaller,
+disjunct populations in the Great Lakes regions of Ohio, Indiana, Michigan,
+and southern Ontario [@Wagner_1974].
+
+Within this range, *C. pumila* is sympatric with *C. occidentalis* L. in the
+north, and *C. laevigata* Willd. in the south. The three species share
+several distinctive characteristics: corky ridges on larger stems and
+branches; ovate leaves with more-or-less oblique bases; monoecious,
+wind-pollinated flowers; and round drupes ca. 1 cm in diamater, with a thin
+mesocarp over a hard stone [@Sherman-BroylesEtAl_1997]. *Celtis laevigata*
+and *C. occidentalis* are both canopy trees, reaching 30 m in height at
+maturity. *Celtis pumila* is limited to the subcanopy, less than 8 m in
+height; in open dunes and alvars it forms stunted shrubs less than 2 m
+tall. *Celtis laevigata* generally has narrow, elongate, nearly entire
+leaves. *Celtis occidentalis* has broader leaves with conspicuously serrate
+margins; in contrast, *C. pumila* leaves are shorter, with the lower margins
+only sparsely toothed. *Celtis occidentalis* and *C. pumila* can also be
+distinguished by the number of major areoles on the leaves: *C. occidentalis*
+has 5-8, compared to 3-5 in *C. pumila* [@Wagner_1974].
+
+However, while typical forms of the three species appear quite distinctive,
+intermediates abound, displaying combinations of characters that defy ready
+identification. Small, vegetative plants are especially challenging to
+identify. This variation has resulted in conflicting opinions on the
+appropriate taxonomic classification of the group. @Fernald_1950 recognized
+three species (*C. occidentalis*, *C. laevigata* and *C. tenuifolia*),
+which he divided into eight subspecies based on slight morphological
+differences and growth substrate. @GleasonCronquist_1991 maintained the
+same three species, but eliminated the subspecies. Furthermore, plants
+which @Fernald_1950 placed in *C. occidentalis* (as *C. occidentalis* var.
+*pumila*) were subsumed within *C. tenuifolia* by @GleasonCronquist_1991. A
+related species, *Celtis reticulata* Torrey, occurs from Texas and Kansas,
+where it is sympatric with *C. pumila* and *C. laevigata*, ranging west to
+the Pacific coast. *Celtis reticulata* has been treated as a variety of
+both *C. occidentalis* and *C. laevigata* [@Sherman-BroylesEtAl_1997].
+
+Many authors have suggested hybridization may be contributing to the
+confusion [e.g., @BuckBidlack_1998; @COSEWIC_2003]. Indeed, @Fernald_1950
+noted that the three species were often "seemingly confluent". However, in
+controlled pollination experiments, @WhittemoreTownsend_2007 were unable to
+cross the species. Whittemore has since been able to produce allotetraploid
+plants by placing pollen from diploid *C. occidentalis* or *C. laevigata*
+on receptive triploid *C. pumila* stigmas (Whittemore pers. comm.). More
+data is necessary to determine how frequently such plants occur in nature,
+and if they are capable of establishing and producing seed of their own.
+Previous taxonomic work on this group has been limited to morphological
+data; molecular markers are needed to determine if there is in fact
+hybridization and gene flow among these species.
+
+The main questions addressed by this project are: 1) How many genetic
+groups of *Celtis* exist in eastern North America, and do they relate
+directly to their cytotypes (distinct diploid and triploid groups)? 2) Is
+there any evidence of hybridization or gene flow between these groups?
+
+Answering these questions is necessary to resolve the taxonomic
+relationships in this group. It is also important to inform conservation
+planning. *Celtis pumila* is a Threatened species in Canada, but
+uncertainty around its identification and suspicions of hybridization with
+*C. occidentalis* present challenges to effective population management.
+
+# Methods
+
+## Field sampling
+
+In May of 2016 and May and June of 2017, we sampled 38 *Celtis* sites
+across the eastern United States and southern Canada (Table 1). We also
+sampled one location in Texas, including specimens of *C. laevigata* and
+*C. reticulata*. Whenever possible, we sampled 20 individuals from a
+location, and included the full range of morphological variability present.
+A minimum distance of 2 meters between plants was used to reduce the
+probability of sampling from the same clone or sibling groups. In total,
+381 samples were collected, with sample sizes ranging from 4-30 and
+averaging 15 samples per population (mean = 15.24).
+
+
+Table 1. *Celtis* populations sampled.
+
+| Site | Location (State/Prov, County) | Latitude | Longitude |
+|------|-------------------------------|----------|-----------|
+|      | Canada                        |          |           |
+| ONPE | Ontario, Essex                | 41.952   | -82.515   |
+| ONLO | Ontario, Hastings             | 44.256   | -77.125   |
+| ONGC | Ontario, Hastings             | 44.223   | -77.587   |
+| ONPA | Ontario, Hastings             | 44.147   | -77.300   |
+| ONPP | Ontario, Lambton              | 43.257   | -81.835   |
+|      |                               |          |           |
+|      | United States                 |          |           |
+| ALCC | Alabama, Butler               | 31.956   | -86.853   |
+| ALHR | Alabama, Butler               | 31.725   | -86.472   |
+| ALAC | Alabama, Crenshaw             | 31.869   | -86.261   |
+| ARCC | Arkansas, Izard               | 35.934   | -91.911   |
+| ARWR | Arkansas, Izard               | 35.911   | -91.928   |
+| ARGR | Arkansas, Randolph            | 36.284   | -91.186   |
+| ILGG | Illinois, Hardin              | 37.598   | -88.381   |
+| ILLG | Illinois, Jackson             | 37.683   | -89.396   |
+| ILWB | Illinois, Johnson             | 37.373   | -88.925   |
+| ILHE | Illinois, Pope                | 37.583   | -88.441   |
+| INEM | Indiana, Knox                 | 38.786   | -87.469   |
+| IDID | Indiana, Porter               | 41.745   | -87.087   |
+| INCB | Indiana, Steuben              | 41.630   | -85.083   |
+| KYBL | Kentucky, Robertson           | 38.451   | -83.993   |
+| KYHR | Kentucky, Madison             | 37.822   | -84.162   |
+| MIWA | Michigan, Washtenaw           | 42.390   | -84.054   |
+| MOCC | Missouri, Shannon             | 37.169   | -91.126   |
+| MOGR | Missouri, St. Louis           | 38.503   | -90.702   |
+| MOKC | Missouri, St. Louis           | 38.500   | -90.689   |
+| MOMA | Missouri, Jefferson           | 38.379   | -90.394   |
+| MOSJ | Missouri, St. Francois        | 37.819   | -90.530   |
+| MSCS | Mississippi, Clarke           | 32.105   | -88.697   |
+| MSSM | Mississippi, Kemper           | 32.870   | -88.720   |
+| MSWD | Mississippi, Marshall         | 34.662   | -89.463   |
+| OHCQ | Ohio, Erie                    | 41.388   | -82.830   |
+| OHES | Ohio, Erie                    | 41.425   | -82.643   |
+| PABE | Pennsylvania, Bedford         | 40.013   | -78.432   |
+| PASH | Pennsylvania, Fulton          | 39.732   | -78.347   |
+| SCCC | South Carolina, Laurens       | 34.335   | -82.028   |
+| SCSF | South Carolina, Laurens       | 34.542   | -81.761   |
+| TXFW | Texas, Tarrant                | 32.837   | -97.476   |
+| VADS | Virginia, Bath                | 37.896   | -79.799   |
+| VARC | Virginia, New River           | 37.389   | -80.867   |
+| VAWR | Virginia, Claiborne           | 36.634   | -83.521   |
+
+
+For each sample, three leaves were removed and dried with silica gel. These
+were stored at room temperature until extraction occurred. Eight samples
+were taken from each population for genetic analysis. All samples from
+populations with 8 or fewer individuals were included in the genetic
+analysis (OHES, INCB, ILHE, MOCC, MSWD).
+
+## Flow Cytometry
+
+We used flow cytometry to assess the ploidy of all of our samples. For each
+sample, a 0.7 cm x 0.7 cm piece of leaf tissue was chopped into fine powder
+in 750 ul Tris*MgCl2 buffer [@PfosserEtAl_1995] and let stain on ice in
+complete darkness for 30 min with 50 uL RNAse and 250 ul Proprodium Iodide
+mixed with Galbraith buffer [@GalbraithEtAl_1983]. Samples were then
+analyzed with a Gallios Flow Cytomter (Beckman Coulter, Brea, California,
+U.S.A.) and compared to petunia and soy standards. The flow cytometry
+histograms were analyzed with the ~flowploidy~ R package [@SmithEtAl_2018].
+
+## DNA Extraction and Microsatellite Assays
+
+For each leaf sample, 15 mg of silica was ground with 5 mm stainless steel
+beads in a 2 mL Eppendorf tube at 30 Hz for 2 minutes using a Retsch MM 300
+Tissue Lyser (Retsch, Haan, Germany). From the ground tissue, genomic DNA
+was extracted using the Plant Nucleospin II Genomic DNA Kit (Machery-Nagel,
+Düren, Germany). Concentration and quality of obtained DNA was verified
+using a Nanodrop 2000 UV-Vis Spectrophotometer (ThermoScientif, Walktham,
+Massachusetts, U.S.A.).
+
+We used genome-skimming to develop eight nuclear polymorphic microsatellite
+markers for use in this study (see Appendix XX). Polymerase Chain Reactions
+were carried out with 8 uL master mixes containing 0.24 uL DMSO, 4.0 uL 2X
+Phusion Master Mix w/ High Fidelity Buffer (New England Biolabs), 0.416 uL
+mix of Left and Right Primers (Sigma-Aldrich, Oakville, ON), 0.192 uL of
+FAM or VIC-labelled CAG Tag (10uM), 2.152 uL ddH2O and 1.0 uL DNA, using a
+T-100 Thermal Cycler (Bio-Rad, Hercules, California, U.S.A.). The thermal
+cycling profile of touchdown PCR (TD-PCR) was used to prevent mispairings
+of primers and achieve higher quality amplification [@DonEtAl_1991]. PCR
+products were run and observed on a 1% agarose gel stained with GelRed
+(Biotium, Hayward, California, U.S.A.) and viewed with a High Performance
+UV Transiluminator (UVP, Upland, California, U.S.A.) with a 100 bp DNA
+ladder (New England Biolabs) to confirm the presence and size of the
+amplicons, along with negative controls for all primer pairs to confirm
+absence of contaminants prior to genotyping.
+
+Amplicons were then pooled into groups and visualized by capillary
+electrophoresis using a 3500xl Genetic Analyzer (Applied Biosystems) with
+the GeneScan 500 and 1200 LIZ Size Standard (Applied Biosystems).
+Individual samples were genotyped with Geneious v11.1.4 software
+(Biomatters, Auckland New Zealand) and manually scored. Samples that failed
+for three or more SSR loci were dropped from the analysis. A total of 332
+samples were genotyped and cytotyped at at least 6 loci.
+
+## Population structure
+
+STRUCTURE analysis [@FalushEtAl_2003] was used to assign the diploid
+samples into genetic clusters, and identify possible inter-cluster hybrids.
+We excluded triploids and tetraploids from this analysis, as they appear to
+be predominantly apomictic (based on displaying limited or no diversity
+within populations, see below), and so violate the assumptions of the
+STRUCTURE model. As we expected our samples to include at least two
+reproductively-isolated species (genetic clusters), we set the model to
+leave allele frequencies uncorrelated among clusters. We ran 20 replicates
+for each value of K (1-10). Each replicate started with 20,000 burn-in
+cycles, followed by 50,000 simulations. We calculated Evanno’s $\Delta$ K
+[@EvannoEtAl_2005] to select the most informative number of groups.
+
+We classified individuals with an inferred proportion of admixture greater
+than 70% for one of the clusters as members of that species. Individuals
+which were not assigned to any cluster with more than 70% probability were
+identified as possible hybrids. This threshold was selected arbitrarily.
+The results were identical using any threshold between 66 and 72%. Setting
+the threshold to 75% results in two additional potential hybrids being
+identified, both from populations already identified with the lower
+threshold.
+
+We complemented the STRUCTURE analysis with principal coordinate analysis
+(PCoA). PCoA is less informative than STRUCTURE, but makes no assumptions
+about reproductive biology, so can accommodate samples with a mixture of
+sexual diploids and apomictic polyploids. The PCoA was based on Bruvo’s
+distance [@BruvoEtAl_2004], as computed by the R package `polysat`
+[@ClarkJasieniuk_2011]. Bruvo’s distance incorporates genotypic distances
+between individuals of different ploidies, and uses a stepwise mutation
+model, as appropriate for microsatellites [@KimuraOta_1975].
+
+## Genetic diversity
+
+The R packages `polysat`, `adegenet` [@Jombart_2008] `poppr`
+[@KamvarEtAl_2014] and `hierfstat` [@GoudetJombart_2015], were used to
+calculate population-level genetic diversity statistics for the populations
+sampled. Observed heterozygosity (He), gene diversity (Hs), and the
+inbreeding coefficient (Fis) were calculated only for the diploids, as the
+triploid populations appear to be mostly apomictic and so violate the
+assumptions underlying F statistics.
+
+Species-level genetic diversity measures were calcualted for diploid
+clusters from the STRUCTURE analysis (i.e., *C. occidentalis* and *C.
+laevigata*) were calculated, including number of private alleles (Ap),
+observed heterozygosity (He), gene diversity (Hs), the inbreeding
+coefficient (Fis), and differentiation among populations (Fst).
+
+We used a distance threshold to identify triploid clones, following the
+approach of @MeirmansTienderen_2004. PCR artifacts and somatic mutations
+may introduce small differences between individuals from the same clonal
+lineage. We set the distance threshold based on visual inspection of a
+histogram of triploid inter-individual distances.
+
+We calculated pairwise-Fst among diploid clusters and triploid groups to
+better characterize their relationships.
+
+# Results
+
+```{r load libraries, echo=FALSE, results='hide', warning = FALSE, message = FALSE}
+## Load libraries here, so we can cache results from loading data_prep.R
+library(polysat)
+library(dplyr)
+library(adegenet)
+library(poppr)
+library(tidyr)
+library(ggplot2)
+library(cowplot)
+library(gridGraphics)
+library(hierfstat)
+library(raster)
+library(sf)
+library(knitr)
+```
+
+```{r load data, echo=FALSE, results='hide', warning = FALSE, message = FALSE, cache = TRUE}
+## Turn up warnings, make sure nothing untoward has crept into the
+options(warn = 2)
+## important code:
+source("data_prep.R")
+## Turn down warnings, as we expect to have negative eigenvalues in our PCoA
+options(warn = 1)
+```
+
+Our samples included 171 diploids (DNA-ploidy mean 
+`r round(flowSum$dip$mean, 2)` pg, sd `r round(flowSum$dip$sd, 2)`) at 26
+locations, 159 triploids (DNA-ploidy mean `r round(flowSum$trip$mean, 2)` pg, sd 
+`r round(flowSum$trip$sd, 2)`) at 24 locations, and 2 tetraploids (DNA-ploidy mean 
+`r round(flowSum$tet$mean, 2)` pg, sd `r round(flowSum$tet$sd, 2)`) at two
+locations (Table 2). 12 of the 26 triploid populations co-occured with
+diploids. One of the tetraploids was collected in an otherwise triploid
+population, and one was collected from a location with diploids and
+triploids.
+
+## Diploid Population Structure
+
+STRUCTURE analysis of the diploid samples indicated they formed two
+distinct clusters; the $\Delta$ K value peaked at 2 groups (Figure
+\@ref(fig:structure)). Based on field examination of leaf morphology
+(unpublished data), and geographic distribution, these clusters correspond
+to the species *C. occidentalis* and *C. laevigata*.
+
+
+```{r population-summary, eval = FALSE, echo = FALSE}
+### The raw data for this table is here:
+OcciStats
+LaeviStats
+HybridStats
+PumilaMLG
+justTetra
+### Creating the table required manually arranging the values, so it's not
+### automated here!
+```
+
+Table 2.
+
+| Site | species      | N  | MLG | Ho    | Hs    | Fis    |
+|------|--------------|----|-----|-------|-------|--------|
+|      | Canada       |    |     |       |       |        |
+| ONGC | pumila       | 6  | 1   |       |       |        |
+| ONLA | occidentalis | 2  | 1   |       |       |        |
+|      | pumila       | 3  | 1   |       |       |        |
+| ONPA | pumila       | 1  | 1   |       |       |        |
+| ONPE | occidentalis | 26 | 25  | 0.458 | 0.433 | -0.029 |
+|      | pumila       | 19 | 1   |       |       |        |
+| ONPP | pumila       | 32 | 1   |       |       |        |
+|      |              |    |     |       |       |        |
+|      | USA          |    |     |       |       |        |
+| ALAC | laevigata    | 3  | 3   | 0.542 | 0.594 | 0.084  |
+|      | pumila       | 5  | 2   |       |       |        |
+| ALCC | laevigata    | 8  | 8   | 0.444 | 0.593 | 0.287  |
+| ALHR | laevigata    | 6  | 6   | 0.427 | 0.521 | 0.126  |
+|      | pumila       | 2  | 1   |       |       |        |
+| ARCC | laevigata    | 8  | 8   | 0.561 | 0.520 | -0.015 |
+|      | pumila       | 1  | 1   |       |       |        |
+| ARGR | laevigata    | 6  | 6   | 0.479 | 0.544 | 0.095  |
+| ARWR | laevigata    | 7  | 7   | 0.518 | 0.528 | -0.031 |
+| IDID | pumila       | 5  | 1   |       |       |        |
+| ILGG | pumila       | 9  | 1   |       |       |        |
+| ILHE | occidentalis | 1  | 1   | 0.714 |       |        |
+|      | pumila       | 1  | 1   |       |       |        |
+|      | hybrid       | 2  | 2   | 0.375 | 0.750 | 0.267  |
+| ILLG | laevigata    | 8  | 8   | 0.511 | 0.613 | 0.147  |
+|      | hybrid       | 1  | 1   | 0.429 |       |        |
+| ILWB | laevigata    | 3  | 3   | 0.625 | 0.583 | -0.152 |
+|      | hybrid       | 3  | 3   | 0.417 | 0.542 | 0.183  |
+|      | pumila       | 4  | 1   |       |       |        |
+| INCB | occidentalis | 4  | 4   | 0.438 | 0.490 | 0.064  |
+| INEM | laevigata    | 4  | 4   | 0.500 | 0.620 | 0.172  |
+|      | occidentalis | 5  | 5   | 0.500 | 0.562 | 0.080  |
+|      | hybrid       | 1  | 1   | 0.500 |       |        |
+| KYBL | pumila       | 1  | 1   |       |       |        |
+| KYHR | pumila       | 9  | 3   |       |       |        |
+| MIWA | pumila       | 8  | 1   |       |       |        |
+| MOCC | occidentalis | 2  | 2   | 0.625 | 0.500 | -0.361 |
+|      | pumila       | 6  | 5   |       |       |        |
+| MOGR | occidentalis | 2  | 2   | 0.750 | 0.571 | -0.278 |
+|      | pumila       | 6  | 2   |       |       |        |
+| MOKC | occidentalis | 8  | 8   | 0.556 | 0.534 | -0.045 |
+| MOMA | laevigata    | 5  | 5   | 0.475 | 0.456 | -0.045 |
+|      | occidentalis | 1  | 1   | 0.500 |       |        |
+|      | hybrid       | 4  | 4   | 0.594 | 0.589 | -0.031 |
+| MOSJ | pumila       | 8  | 4   |       |       |        |
+|      | tetraploid   | 1  | 1   |       |       |        |
+| MSCS | laevigata    | 12 | 12  | 0.354 | 0.426 | 0.260  |
+| MSSM | laevigata    | 8  | 8   | 0.344 | 0.432 | 0.147  |
+| MSWD | laevigata    | 6  | 6   | 0.433 | 0.510 | 0.123  |
+| OHCQ | occidentalis | 2  | 2   | 0.438 | 0.719 | 0.238  |
+|      | pumila       | 6  | 1   |       |       |        |
+| OHES | occidentalis | 8  | 8   | 0.433 | 0.452 | 0.023  |
+| PABE | pumila       | 2  | 2   |       |       |        |
+| PASH | pumila       | 9  | 2   |       |       |        |
+| SCCC | laevigata    | 2  | 2   | 0.438 | 0.429 | -0.133 |
+|      | pumila       | 5  | 1   |       |       |        |
+|      | tetraploid   | 1  | 1   |       |       |        |
+| SCSF | laevigata    | 10 | 10  | 0.317 | 0.313 | -0.035 |
+| TXFW | laevigata    | 1  | 1   | 0.625 |       |        |
+|      | reticulata   | 3  | 2   |       |       |        |
+| VARC | occidentalis | 2  | 2   | 0.500 | 0.469 | -0.056 |
+| VAWR | pumila       | 8  | 3   |       |       |        |
+
+
+Note: Site codes as in Table 1. The first two letters indicate the state or
+province. N is the number of individuals sampled from each species at a
+location. MLG is the number of unique multi-locus genotypes detected. Ho is
+observed heterozygosity, Hs is gene diversity, and Fis is the
+within-population fixation index. Gene diversity and Fis were not
+calculated for triploids (clonal apomicts) or populations where only a
+single individual was genotyped.
+
+```{r structure, echo = FALSE, fig.height = 5, fig.width = 6, dev = "jpeg", dpi = 200, results='hide', warning = FALSE, message = FALSE, fig.cap = "STRUCTURE analysis of diploid samples. A. STRUCTURE plot. Samples are sorted in order of proportion of inferred admixture from the two identified clusters, *C. laevigata* (blue) and *C. occidentalis* (pink). This highlights the 11 putative hybrids, distinguished as having less than 0.7/more than 0.3 inferred contribution from each cluster. The horizontal lines show these thresholds. B. Evanno's delta K values for STRUCTURE analyses, showing the clear peak at K=2.", cache = TRUE}
+dipSTRU <- read.csv("./data/struc-out.csv", header = FALSE)
+colnames(dipSTRU) <- c("K", "LnProb")
+
+dipEvanno <- dipSTRU %>% group_by(K) %>%
+    summarize(meanEst = mean(LnProb),
+              sd = sd(LnProb)) %>%
+    mutate(LnP = c(0, diff(meanEst))) %>%
+    mutate(LnPP = abs(c(0, diff(LnP)[-1], 0))) %>%
+    mutate(deltaK = LnPP/sd)
+
+deltaKplot <- function(){
+  par(mar =  c(3, 3, 0, 0.5))
+
+  plot(dipEvanno$deltaK, type = "l", xlab = "",
+       axes = FALSE, ylab = "")
+
+  axis(1, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+       col.axis = "grey30")
+  axis(2, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+       at = c(0, 250, 500, 750, 1000), las = 1, col.axis = "grey30")
+  box()
+
+  mtext(bquote("Number of Groups"), side = 1, line = 1.25, cex = 0.9)
+  mtext(bquote("Evanno's" ~ Delta ~ K), side = 2, line = 1.75, cex = 0.9)
+}
+
+structPlot <- dipAssign %>% mutate(one = pop1) %>%
+  gather(key = pop, value = prop, pop1, pop2) %>%
+  ggplot() +
+  geom_bar(aes(x = reorder(sample, one), y = prop, fill = pop),
+  ## To reorder bars by location, with locations sorted by proportion of C.
+  ## occidentalis: 
+  ##  geom_bar(aes(x = reorder(sample, unclass(location)), y = prop, fill = pop),
+           stat = "identity", width = 1) +
+  scale_x_discrete(labels = NULL, name = "Sample", breaks = NULL) +
+  scale_y_continuous(name = "Admixture", limits = c(0, 1),
+                     expand = c(0,0)) +
+  geom_hline(aes(yintercept = 0.3), color = "grey") +
+  geom_hline(aes(yintercept = 0.7), color = "grey") +
+  theme(legend.position = "none") + 
+  NULL
+
+plot_grid(structPlot, deltaKplot, nrow = 2, rel_heights = c(3, 2),
+          labels = "AUTO", label_x = 0.9, label_y = c(0.95, 1))
+
+```
+
+There were 97 individuals in the *C. laevigata* cluster, and 63 in the *C.
+occidentalis* cluster. Additionally, 11 individuals had an inferred
+proportion of ancestry < 70% from both species. We interpreted this as
+evidence of potential inter-species hybridization (Figure
+\@ref(fig:structure)). These 11 individuals were found in ILHE, ILLG, ILWB
+(southern Illinois), INEM (southern Indiana), and MOMA (southern eastern
+Missouri). Both *C. laevigata* and *C. occidentalis* were common throughout
+this area, and co-occured together with the hybrids at INEM and MOMA
+(Figure \@ref(fig:diploid-PCoA)).
+
+Principal Coordinates analysis (PCoA) of the diploids revealed the
+intermediate genetic position of the putative hybrids between the two
+diploid species (Figure \@ref(fig:diploid-PCoA)). There is no evidence of a
+third diploid plant group corresponding to *C. pumila*.
+
+```{r diploid-PCoA, fig.width = 7.25, fig.height = 3.5, res = 600, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Diploid *Celtis*. Left: PCoA of the Bruvo distances among 171 diploid *Celtis* samples. Right: Geographic locations of the samples from the PCoA plot.", cache = TRUE}
+diploidDist <- meandistance.matrix(diploids, progress = FALSE,
+                                     distmetric = Bruvo2.distance)
+
+diploid2PCA <- cmdscale(diploidDist, k = 170, eig = TRUE)
+posEigs <- which(diploid2PCA$eig > 0)
+eigs <- round(diploid2PCA$eig[posEigs] /
+              sum(diploid2PCA$eig[posEigs]) * 100, 0) 
+hybrids.pts <- subset(diploid2PCA$points, PopInfo(diploids) == 2)
+hybrid.color <- "purple"
+dipTable <- popTableProj[row.names(diploid2PCA$points), ]
+
+par(mfrow = c(1, 2))
+par(mar = c(3, 3, 0.5, 0.25))
+plot(diploid2PCA$points, asp = 1, cex = 1,
+     bg = c(1, NA, 3)[PopInfo(diploids)],
+     col = c("darkgrey", hybrid.color, "darkgreen")[PopInfo(diploids)],
+     pch = c(21, 24, 23)[PopInfo(diploids)], 
+     axes = FALSE)
+points(hybrids.pts, bg = NA, pch = 24, col = hybrid.color, cex = 1.25)
+axis(1, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+     col.axis = "grey30")
+axis(2, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+     las = 1, col.axis = "grey30")
+box()
+mtext(paste("PCoA Axis 1, ",
+            eigs[1], "% of total variance", sep = ""), side = 1, line = 1.25, cex = 0.9)
+mtext(paste("PCoA Axis 2, ",
+            eigs[2], "% of total variance", sep = ""), side = 2, line = 1.75, cex = 0.9)
+legend(legend = c(expression(italic("C. laevigata")),
+                  expression(italic("C. occidentalis")),
+                  "hybrids"),
+       x = "topleft", pch = c(21, 23, 24), pt.bg = c(1, 3, NA),
+       col = c("darkgrey", "darkgreen", hybrid.color), pt.cex = 1.25,
+       bty = "n", cex = 0.8)
+par(mar = c(3, 2, 0.5, 0.5))
+plot(st_geometry(na.la), xlim = c(-500000, 2000000),
+     ylim = c(-400000, 2100000), border = 'grey', axes = TRUE,
+     graticule = st_crs(na.simp),
+     col_graticule = 'grey90', lon = c(-90, -75),
+     lat = c(30, 45),
+     mgp = c(3, 0.5, 0), 
+     tcl = -0.2, cex.axis = 0.75, col.axis = "grey30",
+     bgc = "lightblue", col = "white")
+plot(st_geometry(gl.proj), add = TRUE, border = "grey", col = "lightblue")
+plot(st_geometry(gl.proj), add = TRUE, border = "grey", col = "lightblue")
+points(dipTable[dipTable$species %in% "occidentalis", ], pch = 23,
+       col = "darkgreen", bg = adjustcolor(3, alpha = 0.3), cex = 2)
+points(dipTable[dipTable$species %in% "laevigata", ], pch = 21,
+       col = "darkgrey", bg = adjustcolor(1, alpha = 0.4), cex = 1.75)
+points(dipTable[dipTable$species %in% "mix", ], pch = 24, col = hybrid.color,
+       cex = 2, bg = NA)
+```
+
+## Triploid Population Structure
+
+The PCoA revealed two geographic clusters of triploids (Figure
+\@ref(fig:triploid-clusters)). The northern samples, including Ontario,
+northern Ohio, southeastern Michigan, and southern Pennsylvania formed a
+relatively tight cluster; the remainder of the samples, including locations
+from Indiana and Virginia to Arkansas and Mississippi, formed a looser
+cluster. The single population of *C. reticulata* was placed within the
+southern triploid cluster.
+
+```{r triploid-clusters, fig.width = 7.25, fig.height = 3.5, res = 600, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Triploid *Celtis*. Left: PCoA of Bruvo distances among 159 triploid *Celtis* samples. Right: Geographic locations of the samples from the PCoA plot.", cache = TRUE}
+tripPCA <- cmdscale(tripDist, k = 157, eig = TRUE)
+
+posEigsTr <- which(tripPCA$eig > 0)
+eigsTr <- round(tripPCA$eig[posEigsTr] /
+                sum(tripPCA$eig[posEigsTr]) * 100, 0)
+
+tripDF <- data.frame(PC1 = tripPCA$points[, 1],
+                    PC2 = tripPCA$points[, 2],
+                    PC3 = tripPCA$points[, 3],
+                    region = popTable[row.names(tripPCA$points),]$region,
+                    area = as.factor(popTable[row.names(tripPCA$points),
+                                              ]$area),
+                    population =
+                      popTable[row.names(tripPCA$points), ]$population)
+tripTable <- popTableProj[row.names(tripDF), ]
+
+##dev.new(width = 7.25, height = 3.5)
+par(mfrow = c(1, 2))
+par(mar = c(3, 3, 0.5, 0.25))
+plot(tripDF$PC1, tripDF$PC2, asp = 1, col = c(1, 4, 5)[tripDF$area],
+     pch = c(25, 3, 4)[unclass(tripDF$area)], cex = 1.5, bg = "grey80",
+     axes = FALSE)
+  axis(1, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+       col.axis = "grey30")
+  axis(2, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+       las = 1, col.axis = "grey30")
+  box()
+  mtext(paste("PCoA Axis 1, ",
+                  eigsTr[1], "% of total variance", sep = ""), side = 1, line = 1.25, cex = 0.9)
+  mtext(paste("PCoA Axis 2, ",
+                  eigsTr[2], "% of total variance", sep = ""), side = 2, line = 1.75, cex = 0.9)
+legend(legend = c(expression(italic("C. reticulata")),
+                  expression(Northern ~ italic("C. pumila")),
+                  expression(Southern ~ italic("C. pumila"))),
+       pch = c(25, 3, 4), col = c(1, 4, 5), bty = 'n', pt.bg = "grey80",
+       x = "topleft", cex = 0.8)
+par(mar = c(3, 2, 0.5, 0.5))
+plot(st_geometry(na.la), xlim = c(-500000, 2000000),
+     ylim = c(-400000, 2100000), border = 'grey', axes = TRUE,
+     graticule = st_crs(na.simp),
+     col_graticule = 'grey90', lon = c(-90, -75),
+     lat = c(30, 45),
+     mgp = c(3, 0.5, 0), 
+     tcl = -0.2, cex.axis = 0.75, col.axis = "grey30",
+     bgc = "lightblue", col = "white")
+plot(st_geometry(gl.proj), add = TRUE, border = "grey", col = "lightblue")
+points(tripTable[tripTable$area == "N", ], pch = 3, col = 4, cex = 1.5)
+points(tripTable[tripTable$area == "S", ], pch = 4, col = 5, cex = 1.5)
+points(tripTable[tripTable$area == "C. reticulata", ], pch = 25,
+       col = 1, cex = 1.5, bg = "grey80")
+```
+
+When the diploids, triploids and tetraploids are combined in a single PCoA,
+the diploid hybrids are again placed between the two diploid species
+(Figure \@ref(fig:all-pcoa)). The southern triploids form a cloud between
+the two diploid species, but with more overlap with the *C. laevigata*
+cluster. The northern triploids are contiguous with the southern triploids,
+but are more removed from the diploids. The two tetraploids are also in an
+intermediate position between the diploids.
+
+```{r all-pcoa, fig.width = 5, fig.height = 3.5, fig.cap = "PCoA of Bruvo distances among 332 *Celtis* samples, including diploids, triploids and tetraploids. Symbols are the same as in previous plots, with the addition of white circles for the tetraploid samples.", echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE}
+tetDist <- as.dist(meandistance.matrix(tetraploids, progress = FALSE,
+                                       distmetric = Bruvo2.distance,
+                                       add = TRUE, loss = FALSE)) 
+
+tetPCA <- cmdscale(tetDist, k = 331, eig = TRUE)
+
+posEigsTet <- which(tetPCA$eig > 0)
+eigsTet <- round(tetPCA$eig[posEigsTet]/sum(tetPCA$eig[posEigsTet]) * 100, 0)
+
+### PopNames(allPloidy)
+### [1] "laevigata"     "mix"           "occidentalis"  "C. reticulata"
+### [5] "North"         "South"        
+
+
+### Initially plot C. reticulata as invisible. 
+### Plot tetraploids as hollow circles.
+symbols <- c(21, 24, 23, 16, 3, 4, 21) 
+outline <- c("darkgrey", hybrid.color, "darkgreen", NA, 4, 5, 1)
+
+par(mar = c(3, 3, 0.5, 0.25))
+plot(tetPCA$points, col = outline[PopInfo(tetraploids)],
+     asp = 1, cex = c(1, 1.5, 1, 1.5, 1.5, 1.5, 1.5)[PopInfo(tetraploids)],
+     pch = symbols[PopInfo(tetraploids)], 
+     bg = c(1, NA, 3, NA, NA, NA, NA)[PopInfo(tetraploids)],
+     xlab = paste("PCoA Axis 1, ",
+                  eigsTet[1], "% of total variance", sep = ""),  
+     ylab = paste("PCoA Axis 2, ",
+                  eigsTet[2], "% of total variance", sep = ""),
+     axes = FALSE)
+axis(1, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+     col.axis = "grey30")
+axis(2, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+     las = 1, col.axis = "grey30")
+box()
+mtext(paste("PCoA Axis 1, ",
+            eigsTet[1], "% of total variance", sep = ""), 
+      side = 1, line = 1.25, cex = 0.9)
+mtext(paste("PCoA Axis 2, ",
+            eigsTet[2], "% of total variance", sep = ""), 
+      side = 2, line = 1.75, cex = 0.9)
+### Replot hybrids, so they're visible on top of diploids:
+points(subset(tetPCA$points, PopInfo(tetraploids) == 2), pch = 24, 
+       col = hybrid.color, cex = 1.5)
+### Plot C. reticulata first as transparent white circles, to 'dim' the
+### points beneath them:
+points(subset(tetPCA$points, PopInfo(tetraploids) == 4), pch = 16,
+       col = adjustcolor('white', alpha.f = 0.5), cex = 2)
+### Then plot them on top of their dimmed backgrounds:
+points(subset(tetPCA$points, PopInfo(tetraploids) == 4), pch = 25, col = "black",
+       bg = 'grey80', cex = 1.5)
+### Replot tetraploids, so they are visible *above* other points
+points(subset(tetPCA$points, PopInfo(tetraploids) == 7), pch = 21, 
+       col = 1, bg = 'grey95', cex = 1.5)
+legend(x = "topleft", pch = 21, col = 1, pt.bg = "grey95",
+       legend = "Tetraploid", bty = 'n')
+### legend(x = "topleft", pch = c(21, 23, 24, 25, 3, 4, 21),
+###        col = c("darkgrey", "darkgreen", hybrid.color, 1, 4,
+###                5, 1),
+###        pt.bg = c(1, 3, NA, "grey80", NA, NA, "grey95"),
+###        legend = c("C. laevigata", "C. occidentalis",
+###                                  "Diploid hybrid", "C. reticulata", "Northern C. pumila",
+###                   "Southern C. pumila", "tetraploid"), bty = 'n')
+
+```
+
+## Genetic diversity
+When the two diploid clusters (i.e., *C. occidentalis* and *C. laevigata*)
+were compared across all 8 loci, *C. occidentalis* had seven private
+alleles, and *C. laevigata* had seventeen (Table
+\@ref(tab:diploid-diversity)).
+
+```{r diploid-diversity, echo = FALSE}
+kable(dipStats, digits = 3,
+      caption = "Population diversity summaries for diploid *Celtis* samples")
+```
+
+Visual inspection of the triploid inter-individual distances showed a
+bimodal distribution (Figure \@ref(fig:triploid-histogram)). We interpreted
+the lower mode to represent distances within clonal lineages, caused by PCR
+artefacts or somatic mutations. Accordingly, we set a threshold distance of
+0.1 in identifying apomictic clones.
+
+```{r triploid-histogram, fig.height = 3.5, fig.width = 3.5, res = 600, fig.cap = "Bruvo Distance among triploid samples", echo = FALSE}
+par(mar = c(5, 4, 1, 2))
+hist(tripDist, breaks = 40, xlab = "Bruvo's Distance", main = "")
+ ```
+
+After applying this threshold, we found a total of 32 triploid multi-locus
+genotypes (MLG). 28 of the MLGs were found in a single population each. The
+remaining four MLG were found in 2-6 populations each. The same MLG was
+shared by all individuals at three Ontario locations (ONGC, 6 individuals;
+ONPE, 19 individuals; PPP, 32 individuals), one Michigan location (MIWA, 8
+individuals), one Ohio location (OHCQ, 6 individuals); and by one of two
+individuals sampled at one Pennsylvania location (PABE). Each of these
+locations are part of the northern cluster of *C. pumila*.
+
+Another MLG is shared between two Illinois locations (ILGG, 9 individuals,
+and ILHI, 1 individual). A third is shared between an Illinois location
+(ILWB, 4 individuals) and a Missouri location (MOCC, 1 individual). The
+fourth multi-location MLG is shared between two locations in Missouri
+(MOSJ, 4 individuals; and MOGR, two individuals).
+
+The northern triploid cluster, which spans nearly 700 km, has only six
+multi-locus genotypes, and there are only three in Ontario. Furthermore,
+most of Ontario consists of only one genotype (57 of 61 individuals
+sampled). This is in stark contrast to the southern cluster, which has 26
+multi-locus genotypes in total, and 12 within 400 km of each other in
+Illinois, Missouri and Arkansas. Additionally, with the exception of
+Pennsylvania, all of the northern populations have only one MLG per
+population, whereas the southern populations have up to five. Thus, there
+is greater genetic diversity in the southern region than the northern
+region, and greater diversity within individual southern populations than
+individual northern populations.
+
+Fst values were calculated between the various species (Table
+\@ref(tab:pairwise-fst)). The differentiation between the triploid groups
+and each of the diploids is less than the differentiation between the
+diploids. The northern triploids are nearly equidistant from both diploids,
+while the southern triploids are approximately half the distance from *C.
+laevigata* as they are from *C. occidentalis*. 
+
+```{r pairwise-fst, echo = FALSE}
+kable(pwFst, digits = 3,
+      caption = "Pairwise Fst among *Celtis* genetic clusters")
+```
+
+# Discussion
+
+Our analysis reveals two distinct diploid *Celtis* species in eastern North
+America, *C. occidentalis* and *C. laevigata*. Typical mature plants are
+readily distinguishable based on leaf morphology, and they have largely
+distinct ranges. However, where they co-occur, particularly in southern
+Illinois, Indiana, and Missouri, we could not reliably identify immature
+plants. In fact, our provisional field identifications of samples in this
+area were frequently wrong, and were corrected with our SSR fingerprint and
+ploidy data. 
+
+While hybridization among *Celtis* taxa has long been suspected in eastern
+North America [@Fernald_1950], our data is the strongest evidence to date
+supporting this hypothesis. @BuckBidlack_1998 invoked hybridization to
+explain inconsistencies in clusters defined by morphological and isozyme
+data in *C. laevigata*, *C. occidentalis*, and *C. reticulata*. However,
+patterns they observed could also have resulted from plasticity, or lack of
+taxonomically informative variation in the markers they employed. In
+contrast, @WhittemoreTownsend_2007 were unable to produce any *C.
+occidentalis* x *C. laevigata* hybrids in controlled crossing experiments.
+
+The sampling we report here is more extensive than previous studies. Our
+structure analysis shows two clear, geographically coherent genetic
+clusters, with a small number of intermediates. These intermediate
+individuals were all found in locations where both species co-occur in
+close proximity, further supporting our view that these are true hybrids.
+
+Notably absent in our diploid data was any indication of a third group
+corresponding to *C. pumila*. It's possible that diploid *C. pumila*
+exists, but if so, it must be a rare occurence. 
+
+More likely, given our data, is that *C. pumila* is a triploid derived from
+both *C. occidentalis* and *C. laevigata*. We have established that these
+two species do, at least occasionally, hybridize. Further, the triploids
+are placed intermediate to the two diploid species in our PCoA (Figure
+\@ref(fig:all-pcoa)), where they cluster with the diploid hybrids; and the
+genetic distance (pairwise Fst) between the triploids and the diploids is
+smaller than the distance between the diploid species (Table
+\$ref(tab:pairwise-fst)).
+
+Such an allotriploid could be formed from two paths: the union of a
+reduced and an unreduced gamete from diploid parents of each species
+(one-step); or the creation of a diploid hybrid, followed by autotriploidy
+(two-step). Interestingly, the pairwise Fst data suggests different
+pathways in each of the two triploid clusters. The southern triploids are
+twice the distance from *C. occidentalis* (0.104, Table
+\$ref(tab:pairwise-fst)) as they are from *C. laevigata*. This is the
+expected relationship in the case that an unreduced *C. laevigata* gamete
+fused with a reduced *C. occidentalis* gamete. In contrast, the nothern
+triploids are equidistant to the two diploid species (0.138 vs 0.135). This
+is more consistent with the two-step process, which would result in an
+equal mixture of both parent species genomes. 
+
+Alternatively, the differing relationships between the southern and
+northern triploids and the diploid species may indicate recent or ongoing
+gene flow from the *C. laevigata* to the southern triploids. Recurrent
+formation of triploids could be providing a one-way transfer of alleles
+from *C. laevigata* to *C. pumila*. This would not be possible in for the
+northern triploid populations, which are outside the range of *C.
+laevigata*. Further genomic data will be needed to clarify this issue.
+[need some citations for recurrent formation of polyploid lineages]
+
+The fact that triploid *C. pumila* occurs beyond the southern limit of *C.
+occidentalis*, and also north of the northern limit of *C. laevigata*,
+indicates that regardless of its origin, it has now established stable
+populations indepdendent of its diploid progenitors. Triploid species are
+rare, but not unknown, and include widespread species such as *Rubus
+canadensis* Linnaeus [@Craig_1960] and *Hieracium lepidulum* Stenstroem
+[@ChapmanEtAl_2004]. The conventional viewpoint is that these species, with
+predominantly apomictic reproduction, are an evolutionary dead-end
+[@StebbinsJr_1950; @ArrigoBarker_2012] and their persistence depends on
+recurrent formation from diploid parents. This does not seem to be the case
+with either of the aforementioned species, nor *Celtis pumila*. All three
+of these species maintain widespread and abundant populations, apparently
+independent of their diploid progenitors.
+
+Although our data is limited to a single population of *C. reticulata*, the
+placement of those samples within the *C. pumila* cloud indicates the
+taxonomy of these two species warrants re-evaluation with more
+comprehensive sampling. [need a little more discussion here]
+
+## Conservation Implications
+
+The most recent assessment of *C. pumila* in Canada [@COSEWIC_2003],
+suggested that the tree-sized plants (up to 6m tall) growing in
+Eastern Ontario forests may be hybrids of *C. occidentalis* and *C.
+pumila*, and as such would not warrant legal protection. We have confirmed
+that these plants are in fact part of the same *C. pumila* cluster as in
+southwestern Ontario. In fact, most of the plants in eastern Ontario, which
+are subcanopy trees, share the same MLG as plants in southwestern Ontario,
+which includes a mix of dwarf forms (< 2 m tall) and taller trees. 
+
+# Literature Cited

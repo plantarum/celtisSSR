@@ -1,0 +1,283 @@
+---
+title: Microsatellite primers for eastern North American *Celtis* (Cannabaceae) species
+author: 
+    - Andrew Hayes
+    - Song Wang
+    - Tyler William Smith
+output:
+  bookdown::pdf_document2:
+    toc: false
+    number_sections: false
+  bookdown::word_document2:
+bibliography: plantarum.json
+csl: american-journal-of-botany.csl
+updated: 2021-02-16
+header-includes:
+   - \usepackage{pdflscape}
+   - \usepackage{float}
+---
+
+# Note
+This manuscript was originally prepared for submission to the journal Applications in Plant Sciences (APPS). However, they stopped publishing primer notes before we could publish it. We include here to document the SSR discovery process used in our paper.
+
+# Introduction
+*Celtis pumila* Pursh [sensu @Whittemore_2013; synonym *C. tenuifolia*
+Nutt.; Cannabaceae] is a shrub or small tree native to eastern North
+America, ranging from Missouri to Pennsylvania, south to Georgia and
+Alabama. Disjunct populations occur in Michigan, Indiana, and Southern
+Ontario. It is a Threatened Species in Canada [@COSEWIC_2003]. However,
+conservation management has been hampered by difficulty distinguishing *C.
+pumila* from *C. occidentalis* L., with which it co-occurs. Both of these
+species are sympatric with *C. laevigata* Willd in the USA. These three
+taxa are characterized by intergrading morphology [@Fernald_1950],
+polyploidy [@Whittemore_2013], and need taxonomic revision
+[@Sherman-BroylesEtAl_1997].
+
+We required highly-informative molecular markers to assess the genetic
+structure and taxonomy of Celtis in eastern North America. Previous studies
+of Celtis have employed AFLPs [@Whittemore_2005; @WhittemoreTownsend_2007].
+However, we elected to develop microsatellite primers, which have several
+advantages: co-dominant expression; multi-allelic loci; and easier scoring.
+
+# Methods and Results
+We extracted DNA from silica-dried leaf tissue of 1 individual of *C.
+pumila*, collected from Trenton, Ontario in 2016, using a Nucleospin Plant
+II kit (Machery-Nagel, Bethlehem, Pennsylvania, U.S.A.). The sample was
+submitted to the Georgia Genomic Facility at the University of Georgia
+(Athens, Georgia, U.S.A) for genome skimming. DNA was fragmented using the
+Bioruptor UCD-300 sonication device (Diagenode, Denville, New Jersey,
+U.S.A). Illumina TruSeqHT libraries were prepared using the Kapa Library
+Preparation Kit (KR0453-v2.13; Kapa Biosystems, Wilmington, Massachusetts,
+U.S.A.) with custom indexes from @FairclothGlenn_2012. Libraries were
+sequenced using an Illumina HiSeq with PE150 reads (Illumina, San Diego,
+California, U.S.A.). The sequence reads are available in the NCBI Sequence
+Read Archive, BioSample Accession SAMN13198269. A total of 1.99 x106 HiSeq
+reads were imported and paired in Geneious 7.0.6 (Biomatters, Auckland, New
+Zealand). Illumina TruSeq adapters and bases with an error probability
+limit above 0.05 were trimmed. A de novo assembly was performed and
+consensus sequences were exported from Geneious as FASTA files and imported
+into PAL_finder v0.02.04 [@CastoeEtAl_2012]. 13,069 loci with 2-6 bp
+repeats were designed at default minimum lengths. We selected 40 primer
+pairs for further study, based on the criteria: both the forward and
+reverse primers were found at only one locus; the motif length was 3-6 base
+pairs; there were more than 10 repeats.
+
+We applied all 40 primer pairs to eight samples: two *Celtis occidentalis*
+and six *C. pumila* collected from populations across the range of the two
+species: *C. occidentalis* : COHA1 (Point Pelee, Ontario); VARC1
+(Virginia); *C. pumila*: DWHA12-2 (Point Pelee, Ontario); ID-ID1 (Indiana);
+KYHR1 (Kentucky); PASH1 (Pennsylvania); VAWR2 (Virginia); and GC1 (Trenton,
+Ontario). 10 of the primer pairs did not show any product on agarose gels
+after electrophoresis, and were excluded from further testing. We scored
+the remaining 30 loci for polymorphisms among the eight samples using a
+3500xl Genetic Analyzer (Applied Biosystems). We identified a primary set
+of 11 loci that produced clear, polymorphic fragments in all samples (Table
+1). We also identified a set of 11 secondary loci, which had potential
+utility but would require further development to validate, due to reduced
+amplification success or absence of polymorphisms (Table S1). We amplified
+the 11 primary loci in 113 samples from five *C. pumila* populations and
+one population of *C. occidentalis* and *C. laevigata*. Population and
+voucher data are presented in Appendix 1. The ploidy of all samples was
+determined via flow cytometry [@Hayes_2019]. Three loci produced
+inconsistent results in the full sample, including genotypes with more
+alleles than expected for the individual (i.e., more than 2 alleles for
+diploids, more than 3 alleles for triploids), and were removed. The
+remaining 8 loci are summarized in Table 2. Samples were genotyped and
+manually scored using Geneious 11.1.4 (Biomatters Ltd.).
+
+PCR reactions were carried out with 8 uL master mixes containing 0.24 uL
+DMSO, 4.0 uL 2X Phusion Master Mix w/ High Fidelity Buffer (New England
+Biolabs), 0.416 uL mix of Left and Right Primers (Sigma-Aldrich, Oakville,
+ON) 0.192 uL of FAM or VIC-labelled CAG Tag (10uM), 2.152 uL ddH 2 O and
+1.0 uL DNA, using a T-100 Thermal Cycler (Bio-Rad, Hercules, California,
+U.S.A.). Thermal cycling began with 5 min denaturation at $95^\circ$C,
+followed by the touchdown phase with 15 cycles of 30 s denaturation at
+$95^\circ$C, 30 s annealing from $72^\circ$ to $57^\circ$C ($-1^\circ$C per
+cycle), and 30 s elongation at $72^\circ$C, followed by a generic
+amplification stage of 20 cycles of 30 s denaturation at $95^\circ$C, 30 s
+annealing at $55^\circ$C and 30 s elongation at $72^\circ$ followed by a 5
+min final elongation at $72^\circ$C and a holding temperature of
+$15^\circ$C. Amplicons were incorporated with fluorescent labels FAM
+(Sigma-Aldrich, Oakville, ON) and VIC (Life Technologies) and pooled into
+four groups of three which were then sequenced by capillary electrophoresis
+using a 3500xl Genetic Analyzer (Applied Biosystems).
+
+All 8 primer pairs were polymorphic, and produced consistent amplification.
+We recorded 47 alleles, 3-14 per locus. The *Celtis pumila* samples, all of
+which are triploid, exhibited very low diversity: 31 of 32 individuals at
+Pinery Provincial Park shared the same multi-locus genotype (MLG); 16 of 19
+individuals from Point Pelee National park shared a different MLG; and 8 of
+9 individuals from Sideling Barrens shared a third MLG. All five *C.
+pumila* populations had MLGs shared by multiple individuals (Table 2). This
+suggests reproduction in these populations is largely apomictic.
+
+Diversity was higher in the diploid populations. Two of the 26 individuals
+from the Point Pelee National Park population of *C. occidentalis* shared
+the same MLG, and all 10 *C. laevigata* individuals had unique MLGs. We
+tested each locus in each species for departure from Hardy-Weinberg
+Equilibrium (HWE) using the hw.test function in the pegas R package
+[@Paradis_2010]. Only locus CSSR28 for *Celtis occidentalis* differed
+significantly from HWE (p = 0.032). All other loci in *C. occidentalis*
+were in HWE, and all loci were in HWE in the *C. laevigata* population.
+
+# Conclusions
+
+We have validated a set of eight microsatellite markers that cross-amplify
+in three *Celtis* species in eastern North America, and show variation
+within and among populations and species. This provides a necessary tool
+for exploring taxonomic relationships and conservation genetics in this
+group.
+
+\newpage
+
+# Tables
+## Table 1. Characterization of 11 polymorphic microsatellite loci based on 2 *C. occidentalis* and 6 *C. pumila* samples.
+
+| Locus  | Motif      | Primer sequences (5'-3')     | Allele size | Ta   | Genbank Acc |
+|--------|------------|------------------------------|-------------|------|-------------|
+| CSSR13 | AATT(28)   | F: AAAGTGACAAAGAGTTTTAAATGGG | 190-220     | 58.2 | MN611935    |
+|        |            | R: AAATCAACTCGAATAAAGAGGGC   |             |      |             |
+| CSSR20 | ACT(39)    | F: TTGGGCAAACCAAAATTGC       | 232-290     | 59.5 | MN611937    |
+|        |            | R: GCCAGAGGACAACAATTTGC      |             |      |             |
+| CSSR22 | TTCGTC(30) | F: CAAACTCAGCAGCTTCTTCTCC    | 360-385     | 60   | MN611938    |
+|        |            | R: CGCCTTTGAGGATCTTCTCC      |             |      |             |
+| CSSR16 | TTG(33)    | F: GGAGCCATAAATTTCGTGAAGG    | 264-297     | 61.1 | MN611936    |
+|        |            | R: TTCCGCCATTGTCACTTCC       |             |      |             |
+| CSSR28 | AGGCTG(30) | F: GTGAGGCCAACCATGAGAGG      | 190-232     | 60.5 | MN611940    |
+|        |            | R: GATCAGGTGGTGAATGTGGC      |             |      |             |
+| CSSR31 | ACTACC(30) | F: TGCCTTCTTTACAACTTTGAGTGC  | 450-480     | 60.6 | MN611942    |
+|        |            | R: CAGAATCGCTTTACGACCCC      |             |      |             |
+| CSSR30 | ACTCAG(24) | F: TTGCTTTCTCCACCATTCCC      | 212-235     | 59.8 | MN611941    |
+|        |            | R: CAAAGAGAGAAATTACGGAGACCC  |             |      |             |
+| CSSR36 | ATACAC(30) | F: TTTTGAGGTGCCCTTTAATGC     | 440-461     | 59.8 | MN611943    |
+|        |            | R: GATGCTGGTCACATGGTTCC      |             |      |             |
+| CSSR24 | ATCTTC(30) | F: TTCGTATGATGAAATTTGGTTGC   | 385-445     | 59.5 | MN611939    |
+|        |            | R: GTGGGAAAGACAACAATGCC      |             |      |             |
+| CSSR37 | TTGGGC(36) | F: TGGGTCCATCAGAAGTTACCG     | 275-348     | 59   | MN611944    |
+|        |            | R: CCACATTTAGTCCCACATTGC     |             |      |             |
+| CSSR38 | ATAGGG(30) | F: GGTAAGAAGGCCAAGTTTCAAGC   | 306-370     | 61.1 | MN611945    |
+|        |            | R: TCATCATCCTTGTCCCTACGC     |             |      |             |
+
+\newpage
+
+## Table 2. Secondary SSR loci
+
+| Locus  | Motif  | Primer sequences (5'-3')        | Allele size (bp) |
+|--------|--------|---------------------------------|------------------|
+| CSSR5  | AGGTGG | F: TATCTTCCCTTGTTGGCACG         | 240-280          |
+|        |        | R: GGAGTTGAGGGTGTTGGAGG         |                  |
+| CSSR7  | CGGGG  | F: AACTAGGGATGCAAATGGGG         | 560*             |
+|        |        | R: CGAATTGGTCCCCAGAGC           |                  |
+| CSSR15 | TTTG   | F: GTGTGAAAACCCCAAATTGC         | 530-550          |
+|        |        | R: CTAATTTCGCAAACCCAGC          |                  |
+| CSSR18 | ATG    | F: CATGGAGAACGGGATTTTGG         | 600-640          |
+|        |        | R: GAGCCCACTCAGATAAGCCC         |                  |
+| CSSR25 | ATATAG | F: AAAAGTCGCAAAAGAGAGATAGC      | 310-330          |
+|        |        | R: TTTCTCACTATTTGTCCTATACATAGCC |                  |
+| CSSR27 | AGGTCG | F: AAAATCAACGTGGCTGAGGC         | 195*             |
+|        |        | R: TCCTCTTCCACGACCTCTCG         |                  |
+| CSSR29 | AGCTTG | F: TTTTCTTCTGCATCCATCAACC       | 100-120          |
+|        |        | R: CCTGAGTCCATGCTTGTGAGC        |                  |
+| CSSR32 | ACAGGG | F: GAATCAGGGTTGGGGTGG           | 75-110           |
+|        |        | R: GTACAAGGAAGGGGACAGGG         |                  |
+| CSSR33 | ACAGAG | F: CCAAAATCAAAACGAATCTCTGC      | 160-200          |
+|        |        | R: TGGATTCCAAAATGGGTTCG         |                  |
+| CSSR34 | AAGTTC | F: CACCATCTTTGGGGACAAGG         | 327*             |
+|        |        | R: AAATTTGCCAACAAGGTCAGG        |                  |
+| CSSR39 | ATACAC | F:TTTTGAGGTGCCCTTTAATGC         | 420-460          |
+|        |        | R:GATGCTGGTCACATGGTTCC          |                  |
+*monomorphic loci
+
+\newpage
+
+## Table 3. Allele and genotype richness, and heterozygosity for 8 SSR loci in four triploid *C. pumila* populations
+
+```{R locus-stats, echo = FALSE}
+library(magrittr)
+library(kableExtra)
+locstat <- read.csv("locus-stats.csv", row.names = 1)
+row.names(locstat)[9] <- "MLG"
+options(knitr.kable.NA = '')
+kable(locstat[, 1:20], booktabs = T, format = "latex",
+      col.names = rep(c("A", "G", "He", "Ho"), times = 5)) %>%
+  add_header_above(c("", "Pinery PP (n=32)" = 4,
+                     "Point Pelee NP (n=19)" = 4,
+                     "Sideling Barrens (n=9)" = 4,
+                     "Hermit Ridge (n=9)" = 4,
+                     "St. Joe SP (n=8)" = 4)) %>%
+  row_spec(8, hline_after = TRUE) %>%
+  kable_styling(latex_options = c("scale_down"))
+```
+
+A: number of alleles; G: number of unique genotypes; He: expected
+heterozygosity; Ho observed heterozygosity; MLG: number of unique
+multi-locus genotypes. He was calculated as $1 - \sum p^3$, where p is the
+frequency of each allele present in the population. Triploid allele
+frequencies were calculated using the simfreq function of the R package
+polysat (Clark and Jasieniuk 2001), which accounts for allele dosage
+ambiguity.
+
+## Table 4. Allele and genotype richness, and heterozygosity for 8 SSR loci in two diploid *Celtis* populations
+
+```{R locus-stats2, echo = FALSE}
+kable(locstat[, 21:26], longtable = T, booktabs = T, format = "latex",
+      col.names = rep(c("A", "He", "Ho"), times = 2)) %>%
+  add_header_above(c("", "Point Pelee NP" = 3,
+                     "Sumter NF" = 3)) %>%
+  add_header_above(c("", "C. occidentalis" = 3,
+                     "C. laevigata" = 3)) %>%
+  row_spec(8, hline_after = TRUE)
+```
+
+Columns as for Table 3. * indicates this locus differs signficantly from
+Hardy-Weinberg equilibrium for this population.
+
+## Table 5. Allele richness for 8 microsatellite primers in three Celtis species
+
+```{R allele-richness, echo = FALSE}
+cnames <- c("Total", "Species", "Private", "Species", "Private",
+           "Species", "Private")
+rnames <- c("CSSR16", "CSSR20", "CSSR22", "CSSR28", "CSSR30", "CSSR31",
+           "CSSR36", "CSSR38")
+dat <- c(9, 8, 3, 6, 1, 1, 0, 14, 11, 2, 7, 2, 6, 1, 6, 5, 2, 2, 0, 2, 1, 4,
+        4, 0, 3, 0, 4, 0, 3, 2, 1, 1, 0, 2, 1, 4, 3, 1, 3, 1, 1, 0, 3, 3,
+        0, 2, 0, 2, 0, 4, 4, 0, 2, 0, 4, 0)
+
+datM <- matrix(dat, byrow = TRUE, nrow = 8)
+row.names(datM) <- rnames
+kable(datM, booktabs = TRUE, col.names = cnames) %>%
+  add_header_above(c(" " = 2, "C. pumila (n = 77)" = 2,
+                     "C. occidentalis (n = 26)" = 2,
+                     "C. laevigata (n = 10)" = 2), italic = TRUE)
+```
+
+Total: total number of alleles over all 113 samples; Species: alleles
+present in each species; Private: number of alleles unique to each species.
+
+## Table 6. Voucher information for Celtis populations used in this study
+
+| Location                                   | Latitude | Longitude | Collection Data                                    |
+|--------------------------------------------|----------|-----------|----------------------------------------------------|
+| Point Pelee National Park, Ont             | 41.9522  | -82.5152  | *                                                  |
+| Pinery Provincial Park, Ont                | 43.2575  | -81.8347  | *                                                  |
+| PASH: Sideling Barrens, PA                 | 39.7327  | -78.3477  | T. W. Smith & V. J. Nowell PASH1, 6 June 2016      |
+| KYHR: Hermit Ridge Road, KY                | 37.8221  | -84.1623  | T. W. Smith & V. J. Nowell KYHR1, 10 June 2016     |
+| MOSJ: St. Joe State Park, MO               | 37.8193  | -90.5306  | T.W. Smith, A. Hayes, T. Garant MOSJ, 2 June 2017  |
+| SCSF: Sumter National Forest, SC           | 34.5427  | -81.7618  | T.W. Smith, A. Hayes, T. Garant SCSF1, 8 June 2017 |
+| VARC: New River, VA                        | 37.3891  | -80.8672  | T.W. Smith & V. J. Nowell TWS 16-007, 8 June 2016  |
+| IDID: Indiana Dunes National Lakeshore, IN | 41.6737  | -87.0192  | T.W. Smith & V. J. Nowell IDID1, 11 June 2016      |
+| VAWR: Wilderness Road State Park, VA       | 36.6349  | -83.5217  | T.W. Smith & V. J. Nowell VAWR2, 9 June 2016       |
+| GC: Trenton, Ont                           | 44.2231  | -77.5867  | T.W. Smith & P. Catling, GC1, 29 June 2016         |
+
+\* All vouchers are deposited at DAO. No *Celtis pumila* vouchers were collected from Ontario populations, as it is a listed species (Threatened) in Canada.
+
+
+
+
+# Acknowledgements
+
+T. Garant, V. Nowell, D. VanExan and P. Catling for assistance in the
+field, S. Grund and W. W. Overbeck provided locality information. This work
+was funded by Point Pelee National Park.
+
+# References
