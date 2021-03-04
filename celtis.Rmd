@@ -6,7 +6,7 @@ output:
     number_sections: false
 bibliography: plantarum.json
 csl: american-journal-of-botany.csl
-updated: 2021-02-25
+updated: 2021-03-04
 ---
 
 # Abstract
@@ -266,7 +266,7 @@ library(sf)
 library(knitr)
 ```
 
-```{r load data, echo=FALSE, results='hide', warning = FALSE, message = FALSE, cache = TRUE}
+```{r load data, echo=FALSE, results='hide', warning = FALSE, message = FALSE, cache = FALSE}
 ## Turn up warnings, make sure nothing untoward has crept into the
 options(warn = 2)
 ## important code:
@@ -734,7 +734,7 @@ are placed intermediate to the two diploid species in our PCoA (Figure
 \@ref(fig:all-pcoa)), where they cluster with the diploid hybrids; and the
 genetic distance (pairwise Fst) between the triploids and the diploids is
 smaller than the distance between the diploid species (Table
-\$ref(tab:pairwise-fst)).
+\@ref(tab:pairwise-fst)).
 
 Such an allotriploid could be formed from two paths: the union of a
 reduced and an unreduced gamete from diploid parents of each species
@@ -742,7 +742,7 @@ reduced and an unreduced gamete from diploid parents of each species
 (two-step). Interestingly, the pairwise Fst data suggests different
 pathways in each of the two triploid clusters. The southern triploids are
 twice the distance from *C. occidentalis* (0.104, Table
-\$ref(tab:pairwise-fst)) as they are from *C. laevigata*. This is the
+\@ref(tab:pairwise-fst)) as they are from *C. laevigata*. This is the
 expected relationship in the case that an unreduced *C. laevigata* gamete
 fused with a reduced *C. occidentalis* gamete. In contrast, the nothern
 triploids are equidistant to the two diploid species (0.138 vs 0.135). This
