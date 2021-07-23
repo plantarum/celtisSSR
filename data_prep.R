@@ -356,7 +356,11 @@ occiAlleles <- allelefreq["occidentalis", -1] > 0
 laevAlleles <- allelefreq["laevigata", -1] > 0 
 northAlleles <- allelefreq["North", -1] > 0  
 southAlleles <- allelefreq["South", -1] > 0  
+pumiAlleles <- northAlleles & southAlleles
 reticAlleles <- allelefreq["C. reticulata", -1] > 0  
+
+lociNames <- substr(colnames(allelefreq), start = 0, stop = 5)
+
 
 occiPA <- occiAlleles & (! laevAlleles)
 laevPA <- laevAlleles & (! occiAlleles)
@@ -382,8 +386,11 @@ pwFst <- pwFst[c("laevigata", "occidentalis", "North", "South",
               c("laevigata", "occidentalis", "North", "South",
                 "C. reticulata")] 
 
+## There's a monomorphic marker in the North group, which generates a
+## warning here:
+options(warn = 1)
 simGst <- calcPopDiff(allelefreq, metric = "Gst")
-
+options(warn = 2)
 ########################
 ## MLG/Clone Analysis ##
 ########################
