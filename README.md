@@ -1,4 +1,7 @@
-These are the source files for our paper on Celtis genetic diversity using SSRs.
+These are the source files for our paper on Celtis genetic diversity using
+SSRs. Note that final formatting and additional edits were applied directly
+to the submitted manuscript in Word doc format. Those changes aren't
+reflected here.
 
 # File List
 
@@ -6,9 +9,10 @@ These are the source files for our paper on Celtis genetic diversity using SSRs.
 - **plantarum.json**: My bibliography database, required only to insert
     citations into the compiled manuscript.
 - **data_prep.R**: The main script used to read and process the data
-- **american-journal-of-botany.csl**: The American Journal of Botany
-  citation format specification. Needed only to format citations and the
-  literature cited section of the manuscript.
+- **systematic-botany.csl**: The Systematic Botany citation format
+    specification. Needed only to format citations and the literature cited
+    section of the manuscript.
+- **celtis.pdf**: The manuscript, compiled into a pdf for easier reading.
 - **data/**:
   - **cssr2018-09-06.txt**: microsatellite raw data, in tab-delimited
     format. Sample.Name: code for each sample; Marker: locus; Allele.1-4:
@@ -29,3 +33,7 @@ These are the source files for our paper on Celtis genetic diversity using SSRs.
     admixture from each population. population: which of the two
     populations the sample was assigned to (i.e., had > 0.7 admixture
     proportion from that species). "mix" indicates hybrids.
+- **ssr-screening/**:
+  - **ssr-screening.pdf**: Our manuscript describing primer development for
+    this project. APPS no longer publishes primer notes, so we don't have
+    somewhere to publish it.
