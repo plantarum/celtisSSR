@@ -35,6 +35,9 @@ reflected here.
     proportion from that species). "mix" indicates hybrids.
   - **struc-out.csv**: STRUCTURE probabilities for identifying optimal K
     value. 
+  - **celtis_morph.csv**: morphological data. Some of the variables are
+    coded in differenet ways in different columns. See the code in
+    `data_prep.R` for the correct way to import it
 - **ssr-screening/**:
   - **ssr-screening.pdf**: Our manuscript describing primer development for
     this project. APPS no longer publishes primer notes, so we don't have
