@@ -687,42 +687,48 @@ sexPCAEigs <- round(sexPCA$sdev^2 / sum(sexPCA$sdev^2), 3) * 100
 #############
 message("prepping maps")
 
-## Uncomment the following block to regenerate the map data:
+## spatial transformations always generate warnings:
+options(warn = 1)
+if(!"prepped-maps.Rda" %in% list.files("data/maps")){
+  message("Recreating map data, requires an internet connection:")
+  us <- getData("GADM", country = "USA", level = 1, path = "./data/maps/",
+                type = "sf")
+  canada <- getData("GADM", country = "CAN", level = 1, path = "./data/maps",
+                    type = "sf")
+  mex <- getData("GADM", country = "MEX", level = 1, path = "./data/maps",
+                 type = "sf")
 
-## us <- getData("GADM", country = "USA", level = 1, path = "./data/maps/",
-##              type = "sf")
-## canada <- getData("GADM", country = "CAN", level = 1, path = "./data/maps",
-##                  type = "sf")
-## mex <- getData("GADM", country = "MEX", level = 1, path = "./data/maps",
-##               type = "sf")
+  ## update old-style crs:
+  st_crs(us) <- st_crs(us)
+  st_crs(canada) <- st_crs(canada)
+  st_crs(mex) <- st_crs(mex)
 
-## ## update old-style crs:
-## st_crs(us) <- st_crs(us)
-## st_crs(canada) <- st_crs(canada)
-## st_crs(mex) <- st_crs(mex)
+  na <- rbind(us, canada, mex)
+  na.simp <- st_simplify(na, dTolerance = 0.01)
+  laea = CRS("+proj=laea +lat_0=30 +lon_0=-95")
+  na.la <- st_transform(na.simp, laea)
 
-## na <- rbind(us, canada, mex)
-## na.simp <- st_simplify(na, dTolerance = 0.01)
-## laea = CRS("+proj=laea +lat_0=30 +lon_0=-95")
-## na.la <- st_transform(na.simp, laea)
-na.la.crop <- st_crop(na.la, xmin = -900000, xmax = 2200000,
-                      ymin = -500000, ymax = 2600000)
-na.la.crop1e3 <- st_simplify(na.la.crop, dTolerance = 1e3)
+  ## cropping and simplifying to create smaller image files:
+  na.la.crop <- st_crop(na.la, xmin = -900000, xmax = 2200000,
+                        ymin = -500000, ymax = 2600000)
+  na.la.crop1e3 <- st_simplify(na.la.crop, dTolerance = 1e3)
 
-na.la.crop2 <- st_crop(na.la, xmin = 2e5, xmax = 8e5,
-                       ymin = 5e5, ymax = 1.1e6)
+  na.la.crop2 <- st_crop(na.la, xmin = 2e5, xmax = 8e5,
+                         ymin = 5e5, ymax = 1.1e6)
 
-na.la.crop2.1e3 <- st_simplify(na.la.crop2, dTolerance = 1e3)
+  na.la.crop2.1e3 <- st_simplify(na.la.crop2, dTolerance = 1e3)
 
-## greatlakes <- st_read("data/maps/greatlakes.shp")
-## gl.proj <- st_transform(greatlakes, laea)
+  greatlakes <- st_read("data/maps/greatlakes.shp")
+  gl.proj <- st_transform(greatlakes, laea)
 
-## popTableProj <- spTransform(popTable, laea)
-save(us, canada, mex, na, na.simp, laea, na.la, greatlakes, gl.proj,
-     na.la.crop, popTableProj, file = "data/maps/prepped-maps.Rda")
-
+  popTableProj <- spTransform(popTable, laea)
+  save(us, canada, mex, na, na.simp, laea, na.la, greatlakes, gl.proj,
+       na.la.crop, popTableProj, file = "data/maps/prepped-maps.Rda")
+} else {
 ## After the map data is generated, load it from this file to speed things up:
-load("data/maps/prepped-maps.Rda")
+  load("data/maps/prepped-maps.Rda")
+}
+options(warn = 2)
 
 flow <- read.csv("data/flow.csv")
 flow$pg <- gsub("#VALUE!", NA, flow$pg)
