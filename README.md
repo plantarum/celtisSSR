@@ -52,3 +52,5 @@ reflected here.
   - **all2_1.csv**, **all3_1.csv** and **all4_1.csv**: The
     admixture/assignment results for one replicate of the STRUCTURE runs
     for K = 2, 3, and 4.
+  - **ksummary.csv**: "Estimated Ln Prob of Data", extracted from STRUCTURE
+    output and used to calculate Evanno's Delta values.
