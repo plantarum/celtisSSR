@@ -185,6 +185,115 @@ popTable[dipAssign$sample, "region"] <- as.character(dipAssign$population)
 popTable[which(popTable$ploidy == 3), "species"] <- "pumila"
 popTable[which(popTable$ploidy == 4), "species"] <- "tetraploid"
 
+#########################
+## Full Structure Data ##
+#########################
+
+message("all STRUCTURE assignments")
+## 2 clusters
+allAssign2 <- read.csv("structure-all/all2_1.csv", header = FALSE)
+allAssign2 <- allAssign2[, -1]
+colnames(allAssign2) <- c("sample", "missing", "population",
+                         "pop1", "pop2")
+rownames(allAssign2) <- allAssign2$sample
+
+allAssign2$ploidy <-
+  as.data.frame(popTable)[rownames(allAssign2), "ploidy"]
+allAssign2$species <-
+  as.data.frame(popTable)[rownames(allAssign2), "species"]
+allAssign2$population <-
+  as.data.frame(popTable)[rownames(allAssign2), "population"]
+allAssign2$popPloid <- paste(allAssign2$population,
+                            allAssign2$ploidy, sep = "")
+allAssign2$region <-
+  as.data.frame(popTable)[rownames(allAssign2), "area"]
+
+allAssign2[c("SCCC5", "MOSJ11"), "region" ] <- "tetraploid"
+
+allAssign2$sortA <- paste(allAssign2$ploidy, allAssign2$species,
+                         allAssign2$region,
+                         allAssign2$population, sep = "") 
+
+allAssign2 <- allAssign2[order(allAssign2$sortA), ]
+
+xlabels <- aggregate(1:nrow(allAssign2),
+                    by = list(allAssign2[, "region"]),
+                    FUN = mean)
+xlabels[, 1] <- c(expression(italic("Cr")),
+                 expression(italic("C. laevigata")),
+                 expression("hybrid"),
+                 expression("Northern Triploids"),
+                 expression(italic("C. occidentalis")),
+                 expression("Southern Triploids"),
+                 expression("4"))
+
+sampleEdges <- aggregate(1:nrow(allAssign2),
+                        by = list(allAssign2[, "region"]), 
+                        FUN = max)
+
+## 3 Clusters
+allAssign3 <- read.csv("structure-all/all3_1.csv", header = FALSE)
+allAssign3 <- allAssign3[, -1]
+colnames(allAssign3) <- c("sample", "missing", "population",
+                         "pop1", "pop2", "pop3")
+rownames(allAssign3) <- allAssign3$sample
+
+allAssign3$ploidy <-
+  as.data.frame(popTable)[rownames(allAssign3), "ploidy"]
+allAssign3$species <-
+  as.data.frame(popTable)[rownames(allAssign3), "species"]
+allAssign3$population <-
+  as.data.frame(popTable)[rownames(allAssign3), "population"]
+allAssign3$popPloid <- paste(allAssign3$population,
+                            allAssign3$ploidy, sep = "")
+allAssign3$region <-
+  as.data.frame(popTable)[rownames(allAssign3), "area"]
+
+allAssign3$sortA <- paste(allAssign3$ploidy, allAssign3$species,
+                         allAssign3$region,
+                         allAssign3$population, sep = "") 
+
+allAssign3 <- allAssign3[order(allAssign3$sortA), ]
+
+allAssign3[c("SCCC5", "MOSJ11"), "region" ] <- "tetraploid"
+
+## Four clusters
+allAssign4 <- read.csv("structure-all/all4_1.csv", header = FALSE)
+allAssign4 <- allAssign4[, -1]
+colnames(allAssign4) <- c("sample", "missing", "population",
+                         "pop1", "pop2", "pop3", "pop4")
+rownames(allAssign4) <- allAssign4$sample
+
+allAssign4$ploidy <-
+  as.data.frame(popTable)[rownames(allAssign4), "ploidy"]
+allAssign4$species <-
+  as.data.frame(popTable)[rownames(allAssign4), "species"]
+allAssign4$population <-
+  as.data.frame(popTable)[rownames(allAssign4), "population"]
+allAssign4$popPloid <- paste(allAssign4$population,
+                            allAssign4$ploidy, sep = "")
+allAssign4$region <-
+  as.data.frame(popTable)[rownames(allAssign4), "area"]
+
+allAssign4$sortA <- paste(allAssign4$ploidy, allAssign4$species,
+                         allAssign4$region,
+                         allAssign4$population, sep = "") 
+
+allAssign4[c("SCCC5", "MOSJ11"), "region" ] <- "tetraploid"
+allAssign4 <- allAssign4[order(allAssign4$sortA), ]
+
+
+message("all STRUCTURE K")
+allK <- read.csv("structure-all/ksummary.csv", header = FALSE)
+colnames(allK) <- c("K", "LnProb")
+
+allEvanno <- allK %>% group_by(K) %>%
+  summarize(meanEst = mean(LnProb),
+            sd = sd(LnProb)) %>%
+  mutate(LnP = c(0, diff(meanEst))) %>%
+  mutate(LnPP = abs(c(0, diff(LnP)[-1], 0))) %>%
+  mutate(deltaK = LnPP/sd)
+
 ############################
 ## Apply metadata to cssr ##
 ############################
@@ -213,8 +322,13 @@ PopInfo(diploids)[dipAssignInCSSR$sample]  <- as.numeric(dipAssignInCSSR$populat
 triploids <- Samples(cssr, ploidies = 3)
 triploids <- cssr[triploids]
 
+tripPops <- triploids
+
 PopNames(triploids) <- levels(factor(c("South", "North", "C. reticulata")))
 PopInfo(triploids)  <- factor(popTable[Samples(triploids), ]$area)
+
+PopNames(tripPops) <- as.character(unique(popTable[Samples(triploids), ]$population))
+PopInfo(tripPops)  <- factor(popTable[Samples(tripPops), ]$population)
 
 allPloidy <- merge(diploids, triploids) 
 
@@ -243,6 +357,8 @@ strata(triploidAG) <- triploidAGStrata
 #########################
 ## Export to STRUCTURE ##
 #########################
+
+write.Structure(tetraploids, ploidy = 4, file = "structure-all/allPloidy.stru")
 
 #################################################################################
 ## The following mash up exports the ~diploids~ genambig object to a STRUCTURE ##
@@ -354,9 +470,10 @@ HybridStats$MLG  <- data.frame(MLG =
 allelefreq <- simpleFreq(allPloidy)
 occiAlleles <- allelefreq["occidentalis", -1] > 0 
 laevAlleles <- allelefreq["laevigata", -1] > 0 
+dipAlleles <- laevAlleles | occiAlleles
 northAlleles <- allelefreq["North", -1] > 0  
 southAlleles <- allelefreq["South", -1] > 0  
-pumiAlleles <- northAlleles & southAlleles
+pumiAlleles <- northAlleles | southAlleles
 reticAlleles <- allelefreq["C. reticulata", -1] > 0  
 
 lociNames <- substr(colnames(allelefreq), start = 0, stop = 5)
@@ -364,6 +481,8 @@ lociNames <- substr(colnames(allelefreq), start = 0, stop = 5)
 
 occiPA <- occiAlleles & (! laevAlleles)
 laevPA <- laevAlleles & (! occiAlleles)
+dipPA <- dipAlleles & !(pumiAlleles)
+pumPA <- !dipAlleles & pumiAlleles
 
 dipStats <- data.frame(Ap = numeric(), Ho = numeric(), Hs = numeric(),
                       Fis = numeric(), Fst = numeric())
@@ -385,6 +504,28 @@ pwFst <- pwFst[c("laevigata", "occidentalis", "North", "South",
                 "C. reticulata"),
               c("laevigata", "occidentalis", "North", "South",
                 "C. reticulata")] 
+
+
+## Triploid Ho calculation, per population:
+## Run the following to get the values in the terminal:
+
+## for(tPop in PopNames(tripPops)) {
+##   message(tPop)
+##   print(mean(
+##     apply(Genotypes(tripPops,
+##                     samples = Samples(tripPops, populations = tPop)),
+##           1, function(x) sum(sapply(x, length) > 1)/8)))
+## }
+
+## for(tPop in PopNames(tripPops)) {
+##   message(tPop)
+##   print(
+##     apply(Genotypes(tripPops,
+##                     samples = Samples(tripPops, populations = tPop)),
+##           1, function(x) sum(sapply(x, length) > 1)))
+## }
+
+
 
 ## There's a monomorphic marker in the North group, which generates a
 ## warning here:
@@ -444,6 +585,80 @@ PumilaMLG <- data.frame(species = "pumila",
 ###############################################
 ## This is not used in the manuscript (yet?) ##
 ###############################################
+sex <- read.table("data/celtis_morph.csv", header = TRUE,
+                 sep = "\t", quote = "")
+
+sex[sex == "na"] <- NA
+
+sex <- sex[which(sex$Ploidy == 3),]
+
+sexVars <- c("PetioleL", "LfL", "LfW", "basalveinL", "Lf.widest", "LfTeeth",
+            "PedicelL",
+            ##"secondaryVeins", 
+            "DrupeL")
+
+sex$PetioleL <- as.numeric(sex$PetioleL)
+sex$LfL <- as.numeric(sex$LfL)
+sex$basalveinL <- as.numeric(sex$basalveinL)
+sex$Lf.widest <- as.numeric(sex$Lf.widest)
+#sex$secondaryVeins <- as.numeric(sex$secondaryVeins)
+sex$DrupeL <- as.numeric(sex$DrupeL)
+
+sex$LW <- sex$LfL/sex$LfW
+sex$widestProp <- sex$Lf.widest/sex$LfL
+sex$PedPet <- sex$PedicelL/sex$PetioleL
+sex$basalVProp <- sex$basalveinL/sex$LfL
+
+sexVars <- c(sexVars, "LW", "widestProp", "PedPet", "basalVProp")
+
+apply(sex[, sexVars], 2, function(x) sum(is.na(x)))
+## drop DrupeL, basalveinL, basalVProp: too many missing
+
+sexVars <- sexVars[! sexVars %in% c("DrupeL", "basalveinL", "basalVProp")]
+
+cor(sex[, sexVars], use = "pairwise.complete")
+## Dropping highly correlated 'size' variables: LfW, and also
+## Lf.widest. Lf.widest not mentioned in manuscript at all.
+
+## Also dropping drupe length: missing in nearly 20% of samples; southern
+## might be a little shorter, but lots of overlap, and many fruits are more
+## or less distended in pressing, so my confidence in the precise values is
+## low.
+
+## and basalVProp, also missing in 13% of samples
+sexVars <- c("PetioleL", "LfL", "LfTeeth", "PedicelL", "LW",
+            "widestProp", "PedPet") 
+
+sex <- sex[complete.cases(sex[, sexVars]), ]
+
+sex$group <- as.factor(sex$group)
+sexLDA <- lda(grouping = sex$group, x = as.data.frame(scale(sex[, sexVars])))
+
+sexCoef <- sexLDA$scaling
+row.names(sexCoef) <- c("Petiole Length", "Leaf Length", "Leaf Teeth",
+                       "Pedicel Length", "Leaf Length/Width Ratio",
+                       "Widest Point of Leaf", "Pedicel/Petiole Ratio")  
+
+sexMeans <- aggregate(sex[, sexVars], by = list(sex$group), mean)
+sexSD <- aggregate(sex[, sexVars], by = list(sex$group), sd)
+
+sexCoef <- cbind(sexCoef, t(sexMeans[, -1]), t(sexSD[, -1]))
+colnames(sexCoef) <- c("Can. Coef.", "North Mean", "South Mean", "North SD",
+                      "South SD")
+sexCoef[, 1] <- round(sexCoef[, 1], 2)
+sexCoef[, 2:5] <- round(sexCoef[, 2:5], 1)
+sexCoef <- data.frame(sexCoef)
+
+sexCoef$North <- sprintf("%.1f ± %.1f", sexCoef[, "North.Mean"],
+                        sexCoef[, "North.SD"])
+sexCoef$South <- sprintf("%.1f ± %.1f", sexCoef[, "South.Mean"],
+                        sexCoef[, "South.SD"])
+sexCoef <- sexCoef[, c(1, 6, 7)]
+
+summary(manova(scale(sex[, sexVars]) ~ sex$group), test = "Wilks")
+
+sexPCA <- prcomp(sex[, sexVars], scale. = TRUE, retx = TRUE)
+sexPCAEigs <- round(sexPCA$sdev^2 / sum(sexPCA$sdev^2), 3) * 100
 
 ## message("Morphology")
 ## morph <- read.csv("data/Field Measurements.csv", row.names = 1)
@@ -472,22 +687,42 @@ PumilaMLG <- data.frame(species = "pumila",
 #############
 message("prepping maps")
 
-us <- getData("GADM", country = "USA", level = 1, path = "./data/maps/",
-             type = "sf")
-canada <- getData("GADM", country = "CAN", level = 1, path = "./data/maps",
-                 type = "sf")
-mex <- getData("GADM", country = "MEX", level = 1, path = "./data/maps",
-              type = "sf")
+## Uncomment the following block to regenerate the map data:
 
-na <- rbind(us, canada, mex)
-suppressWarnings(na.simp <- st_simplify(na, dTolerance = 0.01))
-laea = CRS("+proj=laea +lat_0=30 +lon_0=-95")
-na.la <- st_transform(na.simp, laea)
+## us <- getData("GADM", country = "USA", level = 1, path = "./data/maps/",
+##              type = "sf")
+## canada <- getData("GADM", country = "CAN", level = 1, path = "./data/maps",
+##                  type = "sf")
+## mex <- getData("GADM", country = "MEX", level = 1, path = "./data/maps",
+##               type = "sf")
 
-greatlakes <- st_read("data/maps/greatlakes.shp")
-gl.proj <- st_transform(greatlakes, laea)
+## ## update old-style crs:
+## st_crs(us) <- st_crs(us)
+## st_crs(canada) <- st_crs(canada)
+## st_crs(mex) <- st_crs(mex)
 
-popTableProj <- spTransform(popTable, laea)
+## na <- rbind(us, canada, mex)
+## na.simp <- st_simplify(na, dTolerance = 0.01)
+## laea = CRS("+proj=laea +lat_0=30 +lon_0=-95")
+## na.la <- st_transform(na.simp, laea)
+na.la.crop <- st_crop(na.la, xmin = -900000, xmax = 2200000,
+                      ymin = -500000, ymax = 2600000)
+na.la.crop1e3 <- st_simplify(na.la.crop, dTolerance = 1e3)
+
+na.la.crop2 <- st_crop(na.la, xmin = 2e5, xmax = 8e5,
+                       ymin = 5e5, ymax = 1.1e6)
+
+na.la.crop2.1e3 <- st_simplify(na.la.crop2, dTolerance = 1e3)
+
+## greatlakes <- st_read("data/maps/greatlakes.shp")
+## gl.proj <- st_transform(greatlakes, laea)
+
+## popTableProj <- spTransform(popTable, laea)
+save(us, canada, mex, na, na.simp, laea, na.la, greatlakes, gl.proj,
+     na.la.crop, popTableProj, file = "data/maps/prepped-maps.Rda")
+
+## After the map data is generated, load it from this file to speed things up:
+load("data/maps/prepped-maps.Rda")
 
 flow <- read.csv("data/flow.csv")
 flow$pg <- gsub("#VALUE!", NA, flow$pg)

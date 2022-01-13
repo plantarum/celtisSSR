@@ -33,7 +33,11 @@ reflected here.
     admixture from each population. population: which of the two
     populations the sample was assigned to (i.e., had > 0.7 admixture
     proportion from that species). "mix" indicates hybrids.
+  - **struc-out.csv**: STRUCTURE probabilities for identifying optimal K
+    value. 
 - **ssr-screening/**:
   - **ssr-screening.pdf**: Our manuscript describing primer development for
     this project. APPS no longer publishes primer notes, so we don't have
     somewhere to publish it.
+- **structure-all**: directory for files associated with the STRUCTURE
+  analysis of the complete (mixed ploidy) data.
