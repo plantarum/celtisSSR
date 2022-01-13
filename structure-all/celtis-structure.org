@@ -1,0 +1,423 @@
+#+PROPERTY: header-args:R :session *R-celtis* :dir /home/smithty/nextcloud/celtis-bkup/celtis-manuscript
+#+TITLE: Mixed-ploidy STRUCTURE analysis
+#+LAST_MODIFIED: [2021-11-22 Mon 17:13]
+
+* Prep
+
+The input file is generated from R:
+
+#+begin_src R :eval FALSE
+  write.Structure(tetraploids, ploidy = 4, file = "structure-all/allPloidy.stru")
+#+end_src
+
+** Files
+Input genotypes: [[./allPloidy.stru]]
+
+Parameter files: [[./mainparams]] [[./extraparams]]
+
+* Run parameters:
+
+Important! Need to set ~#define RECESSIVEALLELES 1~ in [[./mainparams]]. 
+
+Highlighted in citep:MeirmansEtAl_2018; this directs STRUCTURE to ignore
+dosage information (which is artificially generated on export from R, and
+we don't know in any case), and to incorporate dosage uncertainty in the
+analysis. Not needed for diploid-only analysis, where the dosage is known
+exactly.
+
+Note that the header for ~allPloidy.stru~ contains a line of missing
+values. This indicates that we don't know which alleles are recessive, so
+STRUCTURE needs to incorporate this uncertainty into the analysis.
+
+#+begin_src bash :results output verbatim
+  head -6 allPloidy.stru ## show the header and first diploid sample
+  tail -4 allPloidy.stru ## show the final tetraploid sample
+#+end_src
+
+#+RESULTS:
+: 		loc16	loc20	loc22	loc28	loc30	loc31	loc36	loc38
+: 		-9	-9	-9	-9	-9	-9	-9	-9
+: MOCC1	3	270	244	369	194	226	465	443	334
+: MOCC1	3	287	268	379	206	226	470	449	334
+: MOCC1	3	-9	-9	-9	-9	-9	-9	-9	-9
+: MOCC1	3	-9	-9	-9	-9	-9	-9	-9	-9
+: SCCC5	7	270	-9	369	200	-9	465	443	334
+: SCCC5	7	281	-9	376	206	-9	470	449	340
+: SCCC5	7	287	-9	381	212	-9	465	443	346
+: SCCC5	7	270	-9	369	200	-9	465	443	334
+
+MOCC1 is a diploid, so has two 'missing' alleles at each locus. SCCC5 is
+one of the tetraploids. Note that R has filled in the uncertain alleles
+with the first allele. This isn't a real call, and STRUCTURE will ignore
+the actual value and consider it as ambiguous.
+
+* Script
+
+Run from a bash script which runs in ~./structure-all/~
+
+[[./structure.sh]]
+
+Loop over 1-10 clusters, 20 reps total. This takes about 4 hours on my
+laptop running on a single thread. Running on 10 threads on the emmet it
+runs in 30 minutes.
+
+Emmet version:
+
+#+begin_src bash :eval FALSE
+  #!/bin/bash
+  
+  KMIN=1
+  KMAX=10
+  REPS=20
+  
+  for REP in $(seq 1 $REPS)
+  do
+      for i in $(seq $KMIN $KMAX)
+      do
+          ~/programSrc/structure/bin/bin/structure -K $i -o data/structure/output${i}_${REP} > data/structure/screen${i}_${REP}.txt &
+      done
+  
+      ## wait for the first 10 runs to finish before starting any more threads
+      ## We only have 12 threads total available
+      wait
+  
+  done
+  
+  wait
+  
+  for i in $(seq $KMIN $KMAX)
+  do
+      echo K = $i
+      for REP in $(seq 1 $REPS)
+      do
+          grep 'Estimated Ln Prob of Data' data/structure/screen${i}_${REP}.txt
+      done
+  done
+#+end_src
+
+#+begin_src bash :results output verbatim
+  KMIN=1
+  KMAX=10
+  REPS=20
+  
+  rm ksummary.csv
+  
+  for i in $(seq $KMIN $KMAX)
+  do
+      for REP in $(seq 1 $REPS)
+      do
+          echo -n $i, >> ksummary.csv
+          grep 'Estimated Ln Prob of Data' \
+               output/screen${i}_${REP}.txt | \
+              cut -d= -f2 | sed 's/ //g' >> ksummary.csv
+      done
+  done
+#+end_src
+
+#+RESULTS:
+
+* Convergence checks
+
+#+begin_src awk :in-file output/screen2_1.txt :results verbatim output file :file conv2_1.csv
+  $0 ~ /^$/ {I=0}
+  I == 1 {gsub(/:/, ""); gsub(/^ +| +$/, ""); gsub(/ +/, ","); gsub(/--/, "NA"); print}
+  /Rep#: +Lambda/ {I=1}
+#+end_src
+
+#+RESULTS:
+[[file:conv2_1.csv]]
+
+#+begin_src R :dir ../ :results graphics file :file "convergence.jpg"
+  conv <- read.csv("structure-all/conv2_1.csv", header = FALSE)
+  names(conv) <- c("rep", "lambda", "alpha", "d12", "ln")
+  
+  par(mfrow = c(2, 2))
+  plot(conv$alpha ~ conv$rep)
+  plot(conv$d12 ~ conv$rep)
+  plot(conv$ln ~ conv$rep)
+#+end_src
+
+#+RESULTS:
+[[file:../convergence.jpg]]
+
+* Analysis
+
+All R script in this file assumes ~data_prep.R~ has already been run, and
+the working directory for the project is the manuscript top-level (i.e.,
+not ~./structure-all/~.
+
+#+begin_src R
+  library(polysat)
+  library(dplyr)
+  library(adegenet)
+  library(poppr)
+  library(tidyr)
+  library(ggplot2)
+  library(cowplot)
+  library(gridGraphics)
+  library(hierfstat)
+  library(raster)
+  library(sf)
+  library(knitr)
+  
+    # Turn up warnings, make sure nothing untoward has crept
+    # into the important code:
+  options(warn = 2)
+  source("data_prep.R")
+  
+#+end_src
+
+#+begin_src R :results graphics file :file allEvanno.jpg
+  allK <- read.csv("structure-all/ksummary.csv", header = FALSE)
+  colnames(allK) <- c("K", "LnProb")
+  
+  allEvanno <- allK %>% group_by(K) %>%
+      summarize(meanEst = mean(LnProb),
+                sd = sd(LnProb)) %>%
+      mutate(LnP = c(0, diff(meanEst))) %>%
+      mutate(LnPP = abs(c(0, diff(LnP)[-1], 0))) %>%
+      mutate(deltaK = LnPP/sd)
+  
+  par(mar =  c(3, 3, 0.5, 0.5))
+  
+  plot(allEvanno$deltaK, type = "l", xlab = "",
+       axes = FALSE, ylab = "")
+  
+  axis(1, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+       col.axis = "grey30")
+  axis(2, cex.axis = 0.75, tcl = -0.2, line = 0, mgp = c(3, 0.3, 0),
+       at = c(0, 250, 500, 750, 1000), las = 1, col.axis = "grey30")
+  box()
+  
+  mtext(bquote("Number of Groups, K"), side = 1, line = 1.25, cex = 0.9)
+  mtext(bquote("Evanno's" ~ Delta ~ K), side = 2, line = 1.75, cex = 0.9)
+  
+#+end_src
+
+#+RESULTS:
+[[file:allEvanno.jpg]]
+
+Two clear groups, so let's pick one of the K=2 reps for our data.
+
+#+begin_src awk :in-file output/output2_1_f :results verbatim output file :file all2_1.csv
+  $0 ~ /^$/ {I=0}
+  I == 1 {gsub(/[():]/, ""); gsub(/^ +| +$/, ""); gsub(/ +/, ",");  print}
+  /Inferred clusters/ {I=1}
+#+end_src
+
+#+RESULTS:
+[[file:all2_1.csv]]
+
+#+begin_src R :output graphics file :file structure.jpg
+  allAssign2 <- read.csv("structure-all/all2_1.csv", header = FALSE)
+  allAssign2 <- allAssign2[, -1]
+  colnames(allAssign2) <- c("sample", "missing", "population",
+                           "pop1", "pop2")
+  rownames(allAssign2) <- allAssign2$sample
+  
+  allAssign2$ploidy <-
+    as.data.frame(popTable)[rownames(allAssign2), "ploidy"]
+  allAssign2$species <-
+    as.data.frame(popTable)[rownames(allAssign2), "species"]
+  allAssign2$population <-
+    as.data.frame(popTable)[rownames(allAssign2), "population"]
+  allAssign2$popPloid <- paste(allAssign2$population,
+                              allAssign2$ploidy, sep = "")
+  allAssign2$region <-
+    as.data.frame(popTable)[rownames(allAssign2), "area"]
+  
+  allAssign2$sortA <- paste(allAssign2$ploidy, allAssign2$species,
+                           allAssign2$region,
+                           allAssign2$population, sep = "") 
+  
+  allAssign2 <- allAssign2[order(allAssign2$sortA), ]
+  
+  xlabels <- aggregate(1:nrow(allAssign2),
+                      by = list(allAssign2[, "species"]),
+                      FUN = mean)
+  sampleEdges <- aggregate(1:nrow(allAssign2),
+                          by = list(allAssign2[, "species"]), 
+                          FUN = max)
+  pdf(file = "celtis-structure.pdf", width = 11, height = 8.5)
+  
+  par(mfrow = c(2, 1))
+  par(mar = c(2, 4, 3, 1))
+  barplot(t(as.matrix(allAssign2[, c("pop1", "pop2")])), col=rainbow(2), 
+          space = 0, xlab="Population", ylab = "Ancestry", 
+          border=NA, axisnames = FALSE,
+          main = "All Samples")
+  abline(v = sampleEdges$x, lwd = 3)
+  axis(1, at = xlabels$x - 0.5, labels = xlabels$Group.1)
+  
+  tripAssign2 <- filter(allAssign2, ploidy > 2)
+  pumlabels <- aggregate(1:nrow(tripAssign2),
+                        by = list(tripAssign2[, "popPloid"]),
+                        FUN = mean)
+  pumEdges <- aggregate(1:nrow(tripAssign2),
+                          by = list(tripAssign2[, "popPloid"]), 
+                          FUN = max)
+  
+  par(mar = c(3, 4, 3, 1))
+  barplot(t(as.matrix(tripAssign2[, c("pop1", "pop2")])), col=rainbow(2), 
+          space = 0, xlab="Population", ylab = "Ancestry", 
+          border=NA, axisnames = FALSE,
+          main = "Polyploid Samples")
+  
+  abline(v = pumEdges$x, lwd = 2, col = 'black')
+  axis(1, at = pumlabels$x - 0.5, labels = pumlabels$Group.1,
+       cex.axis = 0.75)
+  dev.off()
+#+end_src
+
+#+RESULTS:
+
+Check out K=3:
+
+#+begin_src awk :in-file output/output3_1_f :results verbatim output file :file all3_1.csv
+  $0 ~ /^$/ {I=0}
+  I == 1 {gsub(/[():]/, ""); gsub(/^ +| +$/, ""); gsub(/ +/, ",");  print}
+  /Inferred clusters/ {I=1}
+#+end_src
+
+#+RESULTS:
+[[file:all3_1.csv]]
+
+#+begin_src R :output graphics file :file structure3.jpg
+  allAssign3 <- read.csv("structure-all/all3_1.csv", header = FALSE)
+  allAssign3 <- allAssign3[, -1]
+  colnames(allAssign3) <- c("sample", "missing", "population",
+                           "pop1", "pop2", "pop3")
+  rownames(allAssign3) <- allAssign3$sample
+  
+  allAssign3$ploidy <-
+    as.data.frame(popTable)[rownames(allAssign3), "ploidy"]
+  allAssign3$species <-
+    as.data.frame(popTable)[rownames(allAssign3), "species"]
+  allAssign3$population <-
+    as.data.frame(popTable)[rownames(allAssign3), "population"]
+  allAssign3$popPloid <- paste(allAssign3$population,
+                              allAssign3$ploidy, sep = "")
+  allAssign3$region <-
+    as.data.frame(popTable)[rownames(allAssign3), "area"]
+  
+  allAssign3$sortA <- paste(allAssign3$ploidy, allAssign3$species,
+                           allAssign3$region,
+                           allAssign3$population, sep = "") 
+  
+  allAssign3 <- allAssign3[order(allAssign3$sortA), ]
+  
+  xlabels <- aggregate(1:nrow(allAssign3),
+                      by = list(allAssign3[, "species"]),
+                      FUN = mean)
+  sampleEdges <- aggregate(1:nrow(allAssign3),
+                          by = list(allAssign3[, "species"]), 
+                          FUN = max)
+  ##pdf(file = "celtis-structure3.pdf", width = 11, height = 8.5)
+  
+  par(mfrow = c(2, 1))
+  par(mar = c(2, 4, 3, 1))
+  barplot(t(as.matrix(allAssign3[, c("pop1", "pop2", "pop3")])), col=rainbow(3), 
+          space = 0, xlab="Population", ylab = "Ancestry", 
+          border=NA, axisnames = FALSE,
+          main = "All Samples, K = 3")
+  abline(v = sampleEdges$x, lwd = 3)
+  axis(1, at = xlabels$x - 0.5, labels = xlabels$Group.1)
+  
+  tripAssign3 <- filter(allAssign3, ploidy > 2)
+  pumlabels <- aggregate(1:nrow(tripAssign3),
+                        by = list(tripAssign3[, "popPloid"]),
+                        FUN = mean)
+  pumEdges <- aggregate(1:nrow(tripAssign3),
+                          by = list(tripAssign3[, "popPloid"]), 
+                          FUN = max)
+  
+  par(mar = c(3, 4, 3, 1))
+  barplot(t(as.matrix(tripAssign3[, c("pop1", "pop2", "pop3")])), col=rainbow(3), 
+          space = 0, xlab="Population", ylab = "Ancestry", 
+          border=NA, axisnames = FALSE,
+          main = "Polyploid Samples, K = 3")
+  
+  abline(v = pumEdges$x, lwd = 2, col = 'black')
+  axis(1, at = pumlabels$x - 0.5, labels = pumlabels$Group.1,
+       cex.axis = 0.75)
+  ##dev.off()
+#+end_src
+
+Check out K=4:
+
+#+begin_src awk :in-file output/output4_1_f :results verbatim output file :file all4_1.csv
+  $0 ~ /^$/ {I=0}
+  I == 1 {gsub(/[():]/, ""); gsub(/^ +| +$/, ""); gsub(/ +/, ",");  print}
+  /Inferred clusters/ {I=1}
+#+end_src
+
+#+RESULTS:
+[[file:all4_1.csv]]
+
+#+begin_src R :output graphics file :file structure3.jpg
+  allAssign4 <- read.csv("structure-all/all4_1.csv", header = FALSE)
+  allAssign4 <- allAssign4[, -1]
+  colnames(allAssign4) <- c("sample", "missing", "population",
+                           "pop1", "pop2", "pop3", "pop4")
+  rownames(allAssign4) <- allAssign4$sample
+  
+  allAssign4$ploidy <-
+    as.data.frame(popTable)[rownames(allAssign4), "ploidy"]
+  allAssign4$species <-
+    as.data.frame(popTable)[rownames(allAssign4), "species"]
+  allAssign4$population <-
+    as.data.frame(popTable)[rownames(allAssign4), "population"]
+  allAssign4$popPloid <- paste(allAssign4$population,
+                              allAssign4$ploidy, sep = "")
+  allAssign4$region <-
+    as.data.frame(popTable)[rownames(allAssign4), "area"]
+  
+  allAssign4$sortA <- paste(allAssign4$ploidy, allAssign4$species,
+                           allAssign4$region,
+                           allAssign4$population, sep = "") 
+  
+  allAssign4 <- allAssign4[order(allAssign4$sortA), ]
+  
+  xlabels <- aggregate(1:nrow(allAssign4),
+                      by = list(allAssign4[, "species"]),
+                      FUN = mean)
+  sampleEdges <- aggregate(1:nrow(allAssign4),
+                          by = list(allAssign4[, "species"]), 
+                          FUN = max)
+  
+  pdf(file = "celtis-structure4.pdf", width = 11, height = 8.5)
+  
+  par(mfrow = c(2, 1))
+  par(mar = c(2, 4, 3, 1))
+  barplot(t(as.matrix(allAssign4[, c("pop1", "pop2", "pop3",
+                                     "pop4")])),
+          col=rainbow(4), 
+          space = 0, xlab="Population", ylab = "Ancestry", 
+          border=NA, axisnames = FALSE,
+          main = "All Samples, K = 4")
+  abline(v = sampleEdges$x, lwd = 3)
+  axis(1, at = xlabels$x - 0.5, labels = xlabels$Group.1)
+  
+  tripAssign4 <- filter(allAssign4, ploidy > 2)
+  pumlabels <- aggregate(1:nrow(tripAssign4),
+                        by = list(tripAssign4[, "popPloid"]),
+                        FUN = mean)
+  pumEdges <- aggregate(1:nrow(tripAssign4),
+                          by = list(tripAssign4[, "popPloid"]), 
+                          FUN = max)
+  
+  par(mar = c(3, 4, 3, 1))
+  barplot(t(as.matrix(tripAssign4[, c("pop1", "pop2", "pop3", "pop4")])), 
+          col=rainbow(4), 
+          space = 0, xlab="Population", ylab = "Ancestry", 
+          border=NA, axisnames = FALSE,
+          main = "Polyploid Samples, K = 4")
+  
+  abline(v = pumEdges$x, lwd = 2, col = 'black')
+  axis(1, at = pumlabels$x - 0.5, labels = pumlabels$Group.1,
+       cex.axis = 0.75)
+  dev.off()
+#+end_src
+
+
+
