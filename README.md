@@ -1,3 +1,7 @@
+[![DOI](https://zenodo.org/badge/342360048.svg)](https://zenodo.org/badge/latestdoi/342360048)
+
+
+
 These are the source files for our paper on Celtis genetic diversity using
 SSRs. Note that final formatting and additional edits were applied directly
 to the submitted manuscript in Word doc format. Those changes aren't
