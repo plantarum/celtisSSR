@@ -1,0 +1,117 @@
+morphid	Spec	Co	Loc	Habitat	Date	Herbarium	drew	group	Ploidy	PetioleL	LfL	LfW	lf w higher lobe mm	lf w lower lobe mm	Lf widest	basalveinL	Lf margin	LfTNoAlan	LfTeeth	lfTLower	lfTUpper	secondaryVeins	PedicelL	Pedicel indumentum	Drupe mat	DrupeL	Calculate, don't measure:	Lf l:w ratio	Lf widest point	Pedicel:petiole l	Basal vein:lf l ratio
+m001	Palmer 13113	Harris Co. TX	Houston	Woods along streams	19 March 1918	CAS	FALSE	s	3	6	60	32			13		toothed except base (teeth sparse on acumen)	ca 22 teeth	22				9	evenly crisped-pubescent	very imm			1.88	0.22	1.5	0
+m002	D. Isley 3708	Union Co. TN	Norris Reservoir, near Cove Lake	Shoreline	14 July 1944	CAS	FALSE	s	3	10	62	40			12		entire	0	0				11	densely short crisped-hirsute	imm	7		1.55	0.19	1.1	0
+m003	Rev. J. Davis 2737	Marion Co. MO	Riverview Park, Hannibal	Miss. Bluffs	20 June 1914	CAS	FALSE	s	3	8	70	28			26		entire	0	0				10	glabrous, sessile-glandular-viscid	imm			2.5	0.37	1.25	0
+m004	Steyermark 24853	Cole MO	1.5 miles SE of Jefferson City	At base of slope in alluvial thickets	18 Aug 1937	F	FALSE	s	3	5	48	27			13		entire	0	0				10	crisp-hispid throughout	v imm					2	
+m005	L O Williams s. n.	Benton Co Ark	Back Hills about 7 mi E of Rogers on Beaver Lake, alt 400 m	forest edge; mixed pine-oak woods over Mississippian limestone	20 May 1976	F	FALSE	s	3	5	53	31			15		entire	0	0				10	crisp-hispid throughout	v imm			1.71	0.28	2	0
+m006	E J Palmer 54604	Newton Co MO	Camp Neh-ka-ga-hah, 2 mi S of Grand Falls	Along low chert bluff	1 Aug 1952	F	FALSE	s	3	5	55	28			18		almost entire	1	1				9	crisp-hispid throughout	imm	7		1.96	0.33	1.8	0
+m007	J A Steyermark 8814	Boone Co MO	btwn Pruiff and Harrison	Along limestone bluffs of dry creek	8 June 1933	F	FALSE	s	3	6	49	24			12		entire	0	0				8	pubescent	v imm			2.04	0.24	1.33	0
+m008	J W Thieret s. n.	Benton Co MO	hwy C, W of Lincoln		26 Sept 1955	F	FALSE	s	3	5	58	35			19		entire	0	0				8	pubescent	alm mature	7		1.66	0.33	1.6	0
+m009	D E Boufford 18383, E W Wood, H Rodriguez, and J Solomon	Chesterfield SC	Just S of jct SC routes 9 and 601 on 601	Roadside thicket	17 May 1976	MO	FALSE	s	3	6	52	27			18		entire	0	0				7	pubescent	very imm	7		1.93	0.35	1.17	0
+m010	Adams & Adams 1399	Perry Co PA		Open rocky summit	1-2 July 1934	NA	FALSE	n	3	5	45	27			14	25	toothed	10+13	23				6	hispid	imm	6		1.67	0.31	1.2	0.556
+m011	Saunders s. n.	Delaware Co PA		Woods	13 Oct. 1900	NA	FALSE	n	3	6	68	43			25	42	toothed	11+17	28				8	hispid	alm	7		1.58	0.37	1.33	0.618
+m012	Saunders s. n.	near Philadelphia PA		Roadside banks	4 Aug. 1900	NA	FALSE	n	3	14	66	50			14	38	few teeth	3+1	4				19	hispid	imm	9		1.32	0.21	2.07	0.576
+m013	Tidestrom 9307	nr Buena Vista PA			18 Aug 1914	NA	FALSE	n	3	7	71	55			25	40	toothed	12+12, 15+~10	24				9	hispid	imm	8		1.29	0.35	1.29	0.563
+m014	Adams 3881	Montgomery Co PA		Roadside thicket	21 Aug 1937	NA	FALSE	n	3	8	77	55			27	41	toothed	17+16	33				14	hispid	alm	10		1.4	0.35	1.75	0.532
+m015	Adams 1653	Bucks Co PA		Rich hilltop	28 Aug 1934	NA	FALSE	n	3	6	70	45			25	35	toothed	15+13	28				11	hispid	alm	9		1.56	0.36	1.83	0.5
+m016	Fogg 13608	Philadelphia Co PA		Dry bank along railroad	9 Sept 1937	NA	FALSE	n	3	8	60	41			20	29	toothed	7+6	13				11	hispid	almost	10		1.46	0.33	1.38	0.483
+m017	Fogg 12530	Sussex Co NJ	3 mi NNE Aul. Andover		10 July 1937	NA	FALSE	n	3	5	65	40			11	32	toothed	19+22	41				12	sparsely hispid proximally	imm			1.63	0.17	2.4	0.492
+m018	Adams 1550	Sussex Co NJ			15 July 1934	NA	FALSE	n	3	5	50	37			14	22	toothed	14+11	25				8	densely hispid	imm			1.35	0.28	1.6	0.44
+m019	Long 6873	Gloucester Co NJ			22 Sept 1911	NA	FALSE	n	3	10	55	32			17	28	toothed	15+8	23				8	proximally hispid	mat	9		1.72	0.31	0.8	0.509
+m020	Martindale	NJ	Camden		June 1876	NA	FALSE	n	3	7	48	30			16	22	toothed	10+6	16				7	hispid	imm			1.6	0.33	1	0.458
+m021	Fogg 11643	Cape May Co NJ			27 Oct 1936	NA	FALSE	n	3	8	48	33			13	26	toothed	14+8	22				9	glabrous	mature	8		1.45	0.27	1.13	0.542
+m022	Adams 3317	NJ	Salem		17 June 1937	NA	FALSE	n	3	6	41	26			11	24	toothed	14+11	25				7	hispid	imm			1.58	0.27	1.17	0.585
+m023	Long 47	Montgomery Co PA			1 Oct 1908	NA	FALSE	n	3	7	66	46			25	37	toothed	19+13	32				12	glabrous	mat	10		1.43	0.38	1.71	0.561
+m024	MacElwhee s. n.	Dauphin Co PA			4 Oct 1908	NA	FALSE	n	3	5	40	28			8	20	toothed	10+8	18				9	hispid	mat	7		1.43	0.2	1.8	0.5
+m025	Fretz s. n.	Sellersville PA			23 Sept 1902	NA	FALSE	n	3	6	69	39			21	29	toothed	16+15	31				9	glabrous	mat	9		1.77	0.3	1.5	0.42
+m026	Adams 8782	Delaware Co PA			28 Sept 1958	NA	FALSE	n	3	10	53	40			17	30	toothed	10+8	18				11	hispid	mat	8		1.33	0.32	1.1	0.566
+m027	Swartley 233	Bucks Co PA			15 Oct 1933	NA	FALSE	n	3	6	58	38			23	31	toothed	16+9	25				16	glabrous	mat	10		1.53	0.4	2.67	0.534
+m028	Adams 3893	Montgomery Co PA			2 Sept 1937	NA	FALSE	n	3	10	75	43			25	39	toothed	13+14	27				7	hispid	almost mat	8		1.74	0.33	0.7	0.52
+m029	Fender 1446	Perry Co PA			14 June 1936	NA	FALSE	n	3	6	50	33			18	29	toothed	2+4	6				14	hispid	imm			1.52	0.36	2.33	0.58
+m030	Adams 5045	Bedford Co PA			22 June 1941	NA	FALSE	n	3	3	34	22			14	22	toothed	8+2	10				4	hispid	imm			1.55	0.41	1.33	0.647
+m031	Eames 23 Aug 1894	Stratford, Fairfield Co.  Connecticut				NA	FALSE	n	3	7	49	33			13	25	toothed	14+10	24				10	glabrous	immature	7		1.48	0.27	1.43	0.51
+m032	Whittemore 21-025	Washington DC				NA	FALSE	n	3	8	60	37			10	26	sparse teeth	7+5	12				8	glabrous	turning orange	8		1.62	0.17	0.89	0.452
+m033	R. C. Friesner 23886	Harrison Co. IN	Elizabeth Hill, along Road 211	Rocky hillside just west of quarry	30 Sept. 1950	CAS	FALSE	s	3	5	55	28			15		entire	0	0				10	crisp-hispid in proximal half, glabrous in distal half	mat	7		1.96	0.27	2	0
+m034	E. J. Palmer 19269	Taney Co. MO	near Branson	Banks of rocky streams	30ix1920	MO	FALSE	s	3	4	52	29			16		entire or with one or a few indistinct weak crenae	0	0				7	crisp-hispid (dense in proximal half, sparser distally)	mat	8		1.79310344827586	0.307692307692308	1.75	
+m035	Whittemore 10-042	Schuyler Co NY				NA	FALSE	n	3	5	55	38			15	40	finely toothed	12+10	22				7	hispid throughout	imm			1.44736842105263	0.272727272727273	1.4	0.727272727272727
+m036	Oakes	Essex Co MA	Ipswich	ex herb Martindale		NA	FALSE	n	3	9	52	34			14	23	finely toothed	10+9	19				9	glabrous or a few hairs near base	mature	8		1.52941176470588	0.269230769230769	1	0.442307692307692
+m037	Whittemore 10-055	Somerset Co NJ				NA	FALSE	n	3	15	76	47			30	36	toothed	19+17	36				15		missing			1.61702127659574	0.394736842105263	1	0.473684210526316
+m038	Drushel 11352	Somerset Co NJ				NA	FALSE	n	3	7	110	70			35	60	toothed	18+16	30				20	glabrous or sparsely hispid proximally	imm			1.57142857142857	0.318181818181818	2.85714285714286	0.545454545454545
+m039	Bush 4977	Macdonald Co MO				NA	FALSE	s	3	5	43	28			12	21	toothed	7+5	12				6	crisped-hispid	imm	6		1.53571428571429	0.27906976744186	1.2	0.488372093023256
+m040	T G Lammers & M A Vincent 10562	Ste Genevieve Co MO				NA	FALSE	s	3	8	59	38			17	39	a few scattered teeth	5+2	7				10	crisped-hispid	mat	8		1.55263157894737	0.288135593220339	1.25	0.661016949152542
+m041	Palmer 43437	Carroll Co MO				NA	FALSE	s	3	7	59	40			16	31	a few scattered teeth	0+2	2				6	crisped-hispid	mat	7		1.475	0.271186440677966	0.857142857142857	0.525423728813559
+m042	ILGG13				2017	DAO	TRUE	s	3	4	44	40	15	25	15	18			17	8	9	4	10	glabrous	mat	6					
+m043	ILGG08				2017	DAO	TRUE	s	3	7	49	47	17	30	17	30			10	9	1	4	13	glabrous	mat	8					
+m044	MOSJ20				2017	DAO	TRUE	s	3	8	89	48	22	26	22	36			9	2	7	5	15	glabrous	mat	13					
+m045	MOSJ09				2017	DAO	TRUE	s	3	6	57	41	19	22	14	30	sparsely pilose		0	0	0	3	12	sparsely pilose	mat	6					
+m046	MOSJ08				2017	DAO	TRUE	s	3	7	50	30	13	17	17	32	sparsely pilose		0	0	0	3	18	sparsely pilose		7					
+m047	MOSJ04				2017	DAO	TRUE	s	3	8	67	40	22	18	22	35			0	0	0	4	15	sparsely pilose	mat	7					
+m048	MOSJ02				2017	DAO	TRUE	s	3	6	57	36	15	21	19	32			1	1	0	3	12	sparsely pilose	mat	6.5					
+m049	ILWB23				2017	DAO	TRUE	s	3	6	55	37	18	19	16	30			0	0	0	3	10	a few stray hairs	mat	6					
+m050	SCCC13				2017	DAO	TRUE	s		5	56	30	15	15	16	31			3	3	0	4	7.5	densely hirsute with curled hairs	mat	7					
+m051	MIWA11				2017	DAO	TRUE	n	3	5	60	48	24	24	18	34			17	3	14	4	9	densely pilose, some curled hairs	mat	5					
+m052	MIWA03				2017	DAO	TRUE	n	3	5	61	48	22	26	20	39			30	17	13	3	7	pilose	mat	6					
+m053	OHCQ20				2017	DAO	TRUE	n	3	11	87	57	26	31	25	45			24	15	9	4	7	sparsely pilose	mat	6.5					
+m054	OHCQ18				2017	DAO	TRUE	n	3	5	33	23	11	12	11	18			24	12	12	4	5	pilose	mat	6					
+m055	OHCQ17				2017	DAO	TRUE	n	3	5	40	25	12	13	13	23			21	9	12	4	7	short-pilose	mat	5					
+m056	OHCQ13				2017	DAO	TRUE	n	3	9	76	51	23	28	18	38			30	15	15	5	9	pilose	mat	6					
+m057	OHCQ10				2017	DAO	TRUE	n	3	4	31	21	10	11	5	14			24	14	10	4	4	a few hairs	mat	5					
+m058	OHCQ05				2017	DAO	TRUE	n	3	6	47	27	12	15	15	17			12	7	5	5	5	sparse pilose	mat	6					
+m059	OHCQ04				2017	DAO	TRUE	n	3	9	50	33	14	19	14	22			13	5	8	5	7	sparse pilose	mat	6					
+m060	VAWR12				2016	DAO	TRUE	s	3	6	73	46	22	24	20	33			8	2	6	5	10	tomentose	mat	6.5					
+m061	KYHR07				2016	DAO	TRUE	s	3	3	41	24	11	13	9	19			11	7	4	3	7	tomentose	mat	7					
+m062	TWS16-07				2016	DAO	TRUE	s	3	9	90	46	22	24	20	46			2	0	2	4	16	sparse pilose		6					
+m063	VADS				2016	DAO	TRUE	s	3	5	43	23	11	12	11	25			0	0	0	4	7	tomentose		7					
+m064	PABE1				2016	DAO	TRUE	n	3	5	50	35	16	19	18	28			23	13	10	4	11	sparse pilose		7					
+m065	PABE02				2016	DAO	TRUE	n	3	5	61	39	19	20	16	26			25	12	13	4	7	sparse pilose		7					
+m066	PASH				2016	DAO	TRUE	n	3	7	64	40	17	23	18	33			29	17	12	4	13	pilose at base		8					
+m067	TXHO19				2017	DAO	TRUE	s	3	5	53	33	14	19	11	25			0	0	0	4	7	pilose	mat	7					
+m068	TXFW06				2017	DAO	TRUE	s	3	6	59	26	12	14	10	22			0	0	0	5	9	tomentose		6					
+m069	TXFW13				2017	DAO	TRUE	s	3	4	59	34	15	19	19	30			0	0	0	4	13	sparsely  tomentose		6					
+m070	TXFW12				2017	DAO	TRUE	s	3	4	68	49	21	28	27	40			13	9	4	4	10	tomentose		7					
+m071	TXFW10				2017	DAO	TRUE	s	2	5	40	24	11	13	13	20			0	0	0	4	6	glabrous		4					
+m072	ALHR07				2017	DAO	TRUE	s	3	8	60	38	16	22	20	30			0	0	0	4	9	tomentose		6					
+m073	ALHR06				2017	DAO	TRUE	s	3	4	50	30	13	17	12	23			1	1	0	4	7	tomentose		6					
+m074	ALCC07				2017	DAO	TRUE	s	2	9	66	33	14	19	22	28			0	0	0	4	12	glabrous		6					
+m075	ALAC21				2017	DAO	TRUE	s	3	6	47	31	13	18	14	19			3	2	1	3	9	tomentose		7					
+m076	ALAC17				2017	DAO	TRUE	s	3	7	55	46	22	24	19	28			16	8	8	4	9	tomenntose		6					
+m077	ALAC16				2017	DAO	TRUE	s	3	5	45	31	12	19	11	25			0	0	0	3	6	tomentose		6					
+m078	ALAC15				2017	DAO	TRUE	s		5	52	43	20	23	7	30			0	0	0	3	8	tomentose		7					
+m079	ALAC14				2017	DAO	TRUE	s	3	5	42	23	10	13	11	17			0	0	0	2	6	tomentose		6					
+m080	ALAC13				2017	DAO	TRUE	s		7	46	33	14	19	13	29			0	0	0	2	8	crisped		6					
+m081	ARGR16				2017	DAO	TRUE	s		7	60	35	16	19	16	23			0	0	0	4	10	glabrous		6					
+m082	ARGR11				2017	DAO	TRUE	s	3	8	70	39	17	22	19	37			0	0	0	4	16	glabrous		6					
+m083	ARGR09				2017	DAO	TRUE	s	2	11	95	54	26	28	23	38			3	1	2	4	15	tomentose		6					
+m084	ARGR07				2017	DAO	TRUE	s		7	55	33	18	15	12	30			0	0	0	3	9	tom/pilose		5					
+m085	SCCC11				2017	DAO	TRUE	s		5	56	30	14	16	10	25			5	1	4	4	9	tom/pilose		6					
+m086	MOKC01				2017	DAO	TRUE	s	2	15	115	55	25	30	28	39			42	22	20	7	22	glabrous		8					
+m087	MOMA14				2017	DAO	TRUE	s	2	7	60	30	14	16	21	30			12	6	6	5	9	glabrous		6					
+m088	MOGR21				2017	DAO	TRUE	s	3	6	na		na	na	na	na				na	na	na	14	sparse pilose		5					
+m089	MOGR19				2017	DAO	TRUE	s		6	64	41	20	21	15	28			19	8	11	4	10			9					
+m090	MOGR12				2017	DAO	TRUE	s		7	57	35	15	20	13	30			7	5	2	3	14			6					
+m091	MOGR11				2017	DAO	TRUE	s		7	58	37	17	20	17	28			10	8	2	4	16			6					
+m092	Dore24170	Lambton County, Ontario	Near Fort Franks	Fringing woods at back of Lake Huron Dunes	13 July 1968	DAO	FALSE	n	3	5	71	48	22	26	24	40			21	12	9	3	8	pilose/tomentose		7					
+m093	Gaiser207	Lambton County, Ontario	Grand Bend		13 September 1938	DAO	FALSE	n	3	4	35	24	11	13	11	17				na	na	2	4	tomentose		8					
+m094	Oldham7522	Lambton County, Ontario	S of Pinery Provincial Park	Edge of woods	1 July 1987	DAO	FALSE	n	3	na	na		na	na	na	na				na	na	na	5	tomentose		7.5					
+m095	Catling 9 July 1991, Point Anne	Hastings County, Ontario	Point Anne	Open limestone alvar	9 July 1991	DAO	FALSE	n	3	4	51	32	16	16	12	26			28	14	14	5	9	glabrous		7					
+m096	Catling9920	Hastings County, Ontario	Game Club	Prairie openings	16 August 1991	DAO	FALSE	n	3	7	58	45	23	22	20	27			28	12	16	4	6	pilose		7					
+m097	Reznicek6219	Essex County, Ontario	Pelee Island	Savanna	9 October 1980	DAO	FALSE	n	3	5	50	36	18	18	13	24			25	9	16	4	5	tomentose		na					
+m098	Catling9906	Hastings County, Ontario	New Overlook	Prairie opening	22 August 1991	DAO	FALSE	n	3	5	65	50	22	28	22	42			23	11	12	5	8	pilose		8					
+m099	Aiken1869	Lambton County, Ontario	Port Franks	Forested sand dune	16 September 1981	DAO	FALSE	n	3	8	64	52	24	28	25	27			23	11	12	4	10	tomentose		8					
+m100	Catling20281	Hastings County, Ontario	Lonsdale	Cracks in open alvar pavement	13 June 1994	DAO	FALSE	n	3	4	30	18	9	9	8	15			28	13	15	3	5	sparse pilose	stigmas present	6					
+m101	Palmer 21376	Wilson Co. KS				NA	FALSE	s	3	9	60	36			11	37	a few scattered teeth	4+4	8				9	sparsely crisped-pubescent	v imm			1.6666666667	0.18333333333	1	0.61666666667
+m102	Nighswonger 3308	Woods Co OK				NA	FALSE	s	3	3	44	34			17	25	entire	0	0				9	crisped-hispid	mat	8		1.2941176471	0.38636363636	3	0.56818181818
+m103	Correll 10340	Claiborne Parish LA				NA	FALSE	s	3	4	48	35			19	28	entire	0	0				7	crisped-hispid	mat	8		1.3714285714	0.39583333333	1.75	0.58333333333
+m104	Feely AL1 16 Sept 2008	Winston Co AL				NA	FALSE	s	3	6	61	42			20	30	a few scattered teeth	6+0	6				5	crisped-hispid	mat	8		1.4523809524	0.32786885246	0.83333333333	0.49180327869
+m105	Whittemore 14-014	Greene Co AL				NA	FALSE	s	3	7	60	41			17	31	a few scattered teeth	8+5	13				8	crisped-hispid	v imm			1.4634146341	0.28333333333	1.1428571429	0.51666666667
+m106	Jennings 29 Aug 1924	Barren Co KY				NA	FALSE	s	3	9	52	32			16	26	entire	0	0				10	sparsely crisped-pubescent	imm			1.625	0.30769230769	1.1111111111	0.5
+m107	Kurz T-17	Leon Co FL				NA	FALSE	s	3	10	73	50			25	40	a few scattered teeth	9+0	9				9		mat	8		1.46	0.34246575342	0.9	0.54794520548
+m108	Wharton 8560	Woodford Co KY	Mundy's Landing	Edge of woods on hillside	18472	NA	FALSE	s	3	8	69	33			16	40	entire	0	0				14	crisped-hispid	imm	6.5		2.0909090909	0.23188405797	1.75	0.57971014493
+m109	Blanton 192	Escambia Co AL	Atmore	In high pineland	11139	NA	FALSE	s	3	10	67	40			21	25	one tooth	1+0	1				10	crisped-hispid	imm	7		1.675	0.31343283582	1	0.37313432836
+m110	Whittemore 14-084	Jefferson Co TN				NA	FALSE	s	3	7	70	42			23	38	entire	0	0				9	crisped-hispid	imm			1.6666666667	0.32857142857	0	0.54285714286
+m111	Whittemore 12-063	Hampshire Co WV				NA	FALSE	s	3	6	68	36			23	32	tiny fine sharp teeth	9+8	17				14	glabrous	imm			1.8888888889	0.33823529412	0	0.47058823529
+m112	Whittemore 12-045	Jefferson Co TN				NA	FALSE	s	3	6	64	33			18	33	entire	0	0				9	densely crisped-hispid	imm			1.9393939394	0.28125	0	0.515625
+m113	Correll 12384	Red River Co TX				NA	FALSE	s	3	4	49	39			19	26	entire	0	0				5	densely crisped-hispid	imm			1.2564102564	0.38775510204	0	0.5306122449
+m114	Ashe s. n.	Lee Co TX	ix-1923			NA	FALSE	s	3	5	44	27			11	19	entire	0	0				7	densely crisped-hispid	fallen			1.6296296296	0.25	0	0.43181818182
+m115	Ashe s. n.	Jasper Co TX	22-ix-1923			NA	FALSE	s	3	4	42	30			15	25	toothed		6				9	densely crisped-hispid	fallen			1.4	0.35714285714	0	0.59523809524
+m116	Feely AL20 17 Sept 2008	Bibb Co AL				NA	FALSE	s	3	6	49	27			13	19	entire	0	0				8	crisped-hispid	8			1.8148148148	0.26530612245	0	0.38775510204
