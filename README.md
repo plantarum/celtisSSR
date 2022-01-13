@@ -41,3 +41,14 @@ reflected here.
     somewhere to publish it.
 - **structure-all**: directory for files associated with the STRUCTURE
   analysis of the complete (mixed ploidy) data.
+  - **celtis-structure.org**: Details of the STRUCTURE analysis. This is an
+    `orgmode` file. This is a plain text format, you can open and read it
+    in any text editor. If that editor is `Emacs`, you'll have extra
+    feature available to you, but this is not necessary to read the text
+    and review the code.
+  - **mainparams** and **extraparams**: run options for STRUCTURE
+  - **structure.sh**: the script used to run STRUCTURE, looping over all
+    the replicates for each K value.
+  - **all2_1.csv**, **all3_1.csv** and **all4_1.csv**: The
+    admixture/assignment results for one replicate of the STRUCTURE runs
+    for K = 2, 3, and 4.
