@@ -487,7 +487,7 @@ groups (Fig. \@ref(fig:structure)). Based on field examination of leaf
 morphology (unpublished data) and geographic distribution, these clusters
 correspond to the species *C. occidentalis* and *C. laevigata*.
 
-```{r structure, echo = FALSE, fig.height = 3.5, fig.width = 7, results='hide', warning = FALSE, message = FALSE, fig.cap = "Genetic diversity of diploid samples. A. STRUCTURE plot. Samples are sorted in order of proportion of inferred admixture from the two identified clusters, *C. laevigata* (dark) and *C. occidentalis* (light). This highlights the 11 putative hybrids, distinguished as having less than 0.7/more than 0.3 inferred contribution from each cluster. The horizontal lines show these thresholds. B. Evanno's delta K values for STRUCTURE analyses, showing the clear peak at K = 2. C. PCoA of the Bruvo distances among 171 diploid *Celtis* sample microsatellite genotypes.", cache = TRUE, dpi = 1200, dev = "tiff"}
+```{r structure, echo = FALSE, fig.height = 3.5, fig.width = 7, results='hide', warning = FALSE, message = FALSE, fig.cap = "Genetic diversity of diploid samples. A. STRUCTURE plot. Samples are sorted in order of proportion of inferred admixture from the two identified clusters, *C. laevigata* (dark) and *C. occidentalis* (light). This highlights the 11 putative hybrids, distinguished as having less than 0.7/more than 0.3 inferred contribution from each cluster. The horizontal lines show these thresholds. B. Evanno's delta K values for STRUCTURE analyses, showing the clear peak at K = 2. C. PCoA of the Bruvo distances among 171 diploid *Celtis* sample microsatellite genotypes."}
 
 ##dev.new(height = 5, width = 7)
 dipSTRU <- read.csv("./data/struc-out.csv", header = FALSE)
@@ -595,11 +595,11 @@ intermediate genetic position of the putative hybrids between the two
 diploid species (Fig. \@ref(fig:structure)). There is no evidence of a
 third diploid plant group corresponding to *C. pumila*.
 
-```{r diploid-map, fig.width = 3.375, fig.cap = "Geographic distribution of sampled diploid *Celtis* populations.", echo = FALSE, fig.align = 'center'}
+```{r diploid-map-inserted, fig.width = 3.375, fig.cap = "Geographic distribution of sampled diploid *Celtis* populations.", echo = FALSE, fig.align = 'center', eval = FALSE}
 knitr::include_graphics("diploid-plots-inset.jpg")
 ```
 
-```{r diploid-PCoA,  dpi = 1200, dev = "jpeg", echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE, eval = FALSE}
+```{r diploid-map, echo = FALSE, warning = FALSE, message = FALSE, fig.width = 7, fig.height = 3.375, fig.cap = "Geographic distribution of sampled diploid *Celtis* populations."}
   ## dev.new(width = 7, height = 3.5)
 
   ## Original code used to generate maps. These maps are now
@@ -607,7 +607,7 @@ knitr::include_graphics("diploid-plots-inset.jpg")
   ## step anymore :(
 
   ## dev.new(width = 7, height = 3.375)
-svg("diploid-plots2.svg", width = 7, height = 3.375, onefile = TRUE)
+##svg("diploid-plots2.svg", width = 7, height = 3.375, onefile = TRUE)
 par(mfrow = c(1, 2))
 
 par(mar = c(2, 2, 0.5, 0.75))
@@ -648,11 +648,8 @@ legend(legend = c(expression(italic("C. laevigata")),
          x = "bottomright", pch = c(21, 23, 24), pt.bg = c("black", occi.color, NA),
          col = c("darkgrey", "black", hybrid.color), pt.cex = 1.25,
          bty = "n", cex = 0.8)
-dev.off()
-
-
+#dev.off()
 ```
-
 
 ## Triploid Population Structure
 
@@ -689,7 +686,7 @@ The southern triploids form their own cluster at K = 4, although with an
 increasing amount of admixture between this new group and the *C.
 laevigata* cluster.
 
-```{R evanno-triploid, fig.width = 3.375, fig.height = 2, echo = FALSE, fig.cap = "Evanno’s delta K values for STRUCTURE analyses of all samples, showing the primary peak at K = 2 with secondary peaks at K = 3 and K = 4.", dpi = 1200, dev = "tiff"}
+```{R evanno-triploid, fig.width = 3.375, fig.height = 2, echo = FALSE, fig.cap = "Evanno’s delta K values for STRUCTURE analyses of all samples, showing the primary peak at K = 2 with secondary peaks at K = 3 and K = 4."}
   ##dev.new(width = 3.375, height = 2)
 par(mar =  c(3, 3, 0.5, 0.5))
 
@@ -711,7 +708,7 @@ analysis. (Fig. \@ref(fig:triploid-clusters)). The northern samples, formed
 a relatively tight cluster; the southern triploids are somewhat more
 diffuse group, which included the three *C. reticulata* individuals.
 
-```{R triploid-structure, fig.width = 7, fig.height = 5, fig.cap = "STRUCTURE Analysis of Combined Diploid and Polyploid samples. 'hybrid' is the group of diploid hybrids identified in the diploids-only STRUCTURE analysis. *Cr* is the single population of *C. reticulata*; 4 is are the two tetraploid individuals.", echo = FALSE, dpi = 1200, dev = "tiff"}
+```{R triploid-structure, fig.width = 7, fig.height = 5, fig.cap = "STRUCTURE Analysis of Combined Diploid and Polyploid samples. 'hybrid' is the group of diploid hybrids identified in the diploids-only STRUCTURE analysis. *Cr* is the single population of *C. reticulata*; 4 is are the two tetraploid individuals.", echo = FALSE}
   #dev.new(height = 5, width = 7)
 
 structk2 <- function(){
@@ -766,7 +763,7 @@ plot_grid(structk2, structk3, structk4, nrow = 3,
 
 ```
 
-```{r triploid-clusters, fig.width = 7, fig.height = 3.5, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Triploid *Celtis*. Left: PCoA of Bruvo distances among 159 triploid *Celtis* sample microsatellite genotypes. Right: Geographic locations of the samples from the PCoA plot.", cache = TRUE, dpi = 1200, dev = "tiff"}
+```{r triploid-clusters, fig.width = 7, fig.height = 3.5, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Triploid *Celtis*. Left: PCoA of Bruvo distances among 159 triploid *Celtis* sample microsatellite genotypes. Right: Geographic locations of the samples from the PCoA plot."}
 tripPCA <- cmdscale(tripDist, k = 157, eig = TRUE)
 
 posEigsTr <- which(tripPCA$eig > 0)
@@ -804,7 +801,7 @@ legend(legend = c(expression(italic("C. reticulata")),
        pch = c(25, 3, 4), col = c("black", "grey30", "grey70"), bty = 'n', pt.bg = "grey80",
        x = "topleft", cex = 0.8)
 par(mar = c(3, 2, 0.5, 0.5))
-plot(st_geometry(na.la), xlim = c(-500000, 2000000),
+plot(st_geometry(na.la.crop1e3), xlim = c(-500000, 2000000),
      ylim = c(-400000, 2100000), border = 'grey', axes = TRUE,
      graticule = st_crs(na.simp),
      col_graticule = 'grey90', lon = c(-90, -75),
@@ -827,7 +824,7 @@ cluster. The northern triploids were contiguous with the southern
 triploids, but more removed from the diploids. The two tetraploids were
 also in an intermediate position between the diploids.
 
-```{r all-pcoa, fig.width = 3.375, fig.height = 3.375, fig.cap = "PCoA of Bruvo distances among 332 *Celtis* sample microsatellite genotypes, including diploids, triploids and tetraploids. Symbols are the same as in previous plots, with the addition of white circles for the tetraploid samples.", echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE, dpi = 1200, dev = "tiff"}
+```{r all-pcoa, fig.width = 3.375, fig.height = 3.375, fig.cap = "PCoA of Bruvo distances among 332 *Celtis* sample microsatellite genotypes, including diploids, triploids and tetraploids. Symbols are the same as in previous plots, with the addition of white circles for the tetraploid samples.", echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE}
 tetDist <- as.dist(meandistance.matrix(tetraploids, progress = FALSE,
                                        distmetric = Bruvo2.distance,
                                        add = TRUE, loss = FALSE)) 
@@ -953,7 +950,7 @@ same lineage are not expected to be genetically identical
 [@vanBaarlenEtAl_2000; @vanDijkBakx-Schotman_2004]. Accordingly, we set a
 threshold distance of 0.1 in identifying apomictic clones.
 
-```{r triploid-histogram, fig.height = 3.375, fig.width = 3.375, fig.cap = "Bruvo Distance among triploid samples", echo = FALSE, dpi = 1200, dev = "tiff"}
+```{r triploid-histogram, fig.height = 3.375, fig.width = 3.375, fig.cap = "Bruvo Distance among triploid samples", echo = FALSE}
 par(mar = c(3, 3, 1, 2))
 hist(tripDist, breaks = 40, xlab = "Bruvo's Distance",
      main = "", axes = FALSE) 
@@ -1020,7 +1017,7 @@ statistical discrimnation of the two groups, pedicel/petiole ratio (Figure
 extensively between the two groups, rendering them of limited value in
 identification.
 
-```{R morph-plot, fig.width = 7, fig.height = 3.375, fig.cap = "Morphological Variation in Triploid Groups. Left: PCA of Seven Morphological Variables. Right: Leaf Teeth Number and Pedicel/Petiole Ratio, the two most influential variables.", echo = FALSE, dpi = 1200, dev = "tiff"}
+```{R morph-plot, fig.width = 7, fig.height = 3.375, fig.cap = "Morphological Variation in Triploid Groups. Left: PCA of Seven Morphological Variables. Right: Leaf Teeth Number and Pedicel/Petiole Ratio, the two most influential variables.", echo = FALSE}
 ##dev.new(width = 7.5, height = 3.375)
 par(mfrow = c(1, 2))
 par(mar = c(3, 3, 0.5, 0.5))

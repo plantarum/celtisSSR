@@ -723,7 +723,8 @@ if(!"prepped-maps.Rda" %in% list.files("data/maps")){
 
   popTableProj <- spTransform(popTable, laea)
   save(us, canada, mex, na, na.simp, laea, na.la, greatlakes, gl.proj,
-       na.la.crop, popTableProj, file = "data/maps/prepped-maps.Rda")
+       na.la.crop1e3, na.la.crop2.1e3, popTableProj,
+       file = "data/maps/prepped-maps.Rda") 
 } else {
 ## After the map data is generated, load it from this file to speed things up:
   load("data/maps/prepped-maps.Rda")
