@@ -10,7 +10,7 @@ output:
   # number_sections: false
 bibliography: plantarum.json
 csl: systematic-botany.csl
-updated: 2022-01-06
+updated: 2022-01-13
 ---
 
 # Abstract
@@ -455,6 +455,7 @@ library(raster)
 library(sf)
 library(knitr)
 library(vegan)
+library(magrittr)
 ```
 
 ```{r load data, echo=FALSE, results='hide', warning = FALSE, message = FALSE}
